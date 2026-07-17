@@ -270,6 +270,53 @@
       .project { grid-template-columns: 36px 1fr; gap: 14px; }
       .footer-inner { flex-direction: column; }
     }
+  
+    /* Smartphone-Optimierung */
+    @media (max-width: 680px) {
+      body { overflow-x: hidden; }
+      .wrap { width: min(100% - 28px, 1160px); }
+      .nav-inner {
+        min-height: auto;
+        padding: 13px 0 10px;
+        flex-wrap: wrap;
+        gap: 9px;
+      }
+      .brand { width: 100%; font-size: .96rem; }
+      .nav-links {
+        display: flex;
+        width: 100%;
+        gap: 18px;
+        overflow-x: auto;
+        padding: 0 0 3px;
+        font-size: .82rem;
+        white-space: nowrap;
+        scrollbar-width: none;
+      }
+      .nav-links::-webkit-scrollbar { display: none; }
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 44px;
+        padding: 48px 0 64px;
+      }
+      h1 { font-size: clamp(3.2rem, 16vw, 4.8rem); }
+      h2 { font-size: clamp(2.25rem, 11vw, 3.3rem); }
+      .intro, .section-lead { font-size: 1rem; }
+      .actions { display: grid; grid-template-columns: 1fr; }
+      .button { width: 100%; padding-inline: 15px; text-align: center; overflow-wrap: anywhere; }
+      .portrait-wrap { width: min(100%, 440px); }
+      .quick-facts { margin-top: 0; }
+      section { padding: 76px 0; }
+      .section-head { margin-bottom: 38px; }
+      .card { padding: 24px; }
+      .project { grid-template-columns: 32px 1fr; gap: 12px; }
+      .project p { grid-column: 2; }
+      .video-card { border-radius: 16px; }
+      .video-note { padding: 15px 16px; font-size: .8rem; }
+      #kontakt .profile-text { min-width: 0; }
+      #kontakt a { overflow-wrap: anywhere; word-break: break-word; }
+      .footer-inner { flex-direction: column; gap: 8px; }
+      .footer-inner a { overflow-wrap: anywhere; }
+    }
   </style>
 </head>
 <body>
