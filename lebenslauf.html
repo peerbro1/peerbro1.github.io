@@ -23,6 +23,27 @@
     footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
     @media(max-width:760px){.layout{grid-template-columns:1fr;gap:10px}.item{grid-template-columns:1fr;gap:5px}header{padding-top:58px}.nav{font-size:.9rem}}
     @media print{nav{display:none}body{background:white}.wrap{width:100%}header{padding-top:0}main{padding-bottom:0}.item{break-inside:avoid}}
+  
+    /* Smartphone-Optimierung */
+    @media (max-width: 680px) {
+      body { overflow-x: hidden; }
+      .wrap { width: min(100% - 28px, 1080px); }
+      .nav { min-height: auto; padding: 13px 0; align-items: flex-start; }
+      .brand, .back { font-size: .86rem; }
+      .back { text-align: right; }
+      header { padding: 52px 0 42px; }
+      h1 { font-size: clamp(3rem, 15vw, 4.4rem); overflow-wrap: anywhere; }
+      .lead { font-size: 1rem; }
+      .contact { display: grid; gap: 8px; }
+      .contact a { overflow-wrap: anywhere; word-break: break-word; }
+      main { padding: 52px 0 72px; }
+      .layout { grid-template-columns: 1fr; gap: 8px; }
+      .side section, .content section { margin-bottom: 48px; }
+      .item { grid-template-columns: 1fr; gap: 5px; padding: 23px 0; }
+      .tag-list { gap: 7px; }
+      .tag { font-size: .82rem; padding: 6px 9px; }
+      .highlight { padding: 22px; border-radius: 16px; }
+    }
   </style>
 </head>
 <body>
