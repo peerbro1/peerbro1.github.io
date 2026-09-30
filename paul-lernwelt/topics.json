@@ -1,0 +1,44 @@
+[
+  {
+    "id": "words",
+    "name": "Wortarten-Labor",
+    "desc": "Nomen, Artikel, Pronomen, Adjektiv, Adverb und Verb",
+    "rule": "Bestimme immer das einzelne markierte Wort: Nomen benennen, Artikel begleiten, Pronomen vertreten oder begleiten, Adjektive beschreiben, Adverbien nennen Umstände und Verben sagen, was geschieht."
+  },
+  {
+    "id": "reorder",
+    "name": "Umstellproben-Pfad",
+    "desc": "Satzglieder gemeinsam verschieben",
+    "rule": "Bei der Umstellprobe werden die Wörter eines Satzgliedes nur gemeinsam verschoben. Was bei jeder sinnvollen Umstellung zusammenbleibt, ist ein Satzglied."
+  },
+  {
+    "id": "sentenceparts",
+    "name": "Satzglieder-Zentrale",
+    "desc": "Subjekt, Prädikat, Objekte und Angaben benennen",
+    "rule": "Zerlege den Satz zuerst mit der Umstellprobe. Benenne danach Subjekt, Prädikat, Akkusativobjekt, Dativobjekt oder adverbiale Bestimmung."
+  },
+  {
+    "id": "questions",
+    "name": "Frageproben-Brücke",
+    "desc": "Mit der richtigen Frage zum Satzglied",
+    "rule": "Subjekt: Wer oder was? Prädikat: Was tut/geschieht? Akkusativobjekt: Wen oder was? Dativobjekt: Wem? Ort: Wo/Wohin/Woher? Zeit: Wann/Wie lange? Grund: Warum? Art und Weise: Wie?"
+  },
+  {
+    "id": "objects",
+    "name": "Objekt-Arena",
+    "desc": "Dativ- und Akkusativobjekt unterscheiden",
+    "rule": "Frage nach dem Dativobjekt mit Wem? Frage nach dem Akkusativobjekt mit Wen oder was? Markiere immer die vollständige Wortgruppe."
+  },
+  {
+    "id": "adverbials",
+    "name": "Adverbial-Kompass",
+    "desc": "Ort, Zeit, Grund und Art und Weise",
+    "rule": "Ort: Wo, wohin, woher? Zeit: Wann, wie lange? Grund: Warum? Art und Weise: Wie? Die ganze Antwort ist die adverbiale Bestimmung."
+  },
+  {
+    "id": "exam",
+    "name": "Prüfungs-Mix",
+    "desc": "Alle Checklisten-Themen gemischt",
+    "rule": "Arbeite wie in der Klassenarbeit: Satz lesen, Prädikat finden, sinnvolle Frage stellen und die vollständige Wortgruppe bestimmen."
+  }
+]

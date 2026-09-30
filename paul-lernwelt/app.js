@@ -1,13 +1,13 @@
 'use strict';
 const $=id=>document.getElementById(id), esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const stations=[
- {id:'words',name:'Wortarten-Labor',icon:'🔬',x:220,y:180,rule:'Nomen benennen Dinge, Lebewesen und Vorstellungen. Verben beschreiben Tätigkeiten, Vorgänge und Zustände. Adjektive beschreiben Eigenschaften. Artikel begleiten Nomen, Pronomen vertreten oder begleiten sie. Adverbien wie gestern und dort sind unveränderlich.'},
- {id:'cases',name:'Vier-Fälle-Burg',icon:'🏰',x:550,y:130,rule:'Nominativ: Wer oder was? Genitiv: Wessen? Dativ: Wem? Akkusativ: Wen oder was? Frage nach der markierten Wortgruppe im ganzen Satz.'},
- {id:'subject',name:'Subjekt-Wald',icon:'🌳',x:875,y:185,rule:'Frage: Wer oder was + Prädikat? Das vollständige Subjekt umfasst auch Artikel und Adjektive: Der kleine Hund. Es steht nicht immer am Satzanfang.'},
- {id:'predicate',name:'Prädikat-Werkstatt',icon:'⚒️',x:200,y:455,rule:'Markiere alle verbalen Teile: räumt … auf; hat … geschlafen; muss … lernen. Bei „Sie ist glücklich“ markierst du wie auf deinem Arbeitsblatt nur „ist“.'},
- {id:'spelling',name:'Wörter-Mine',icon:'💎',x:475,y:535,extra:true,rule:'Verlängern: Hund → Hunde, also d. Ableiten: Bäume → Baum, also äu. das/dass: Kannst du dieses, jenes oder welches einsetzen? Dann das.'},
- {id:'clauses',name:'Satzbau-Hafen',icon:'⛵',x:830,y:475,extra:true,rule:'Nebensätze werden mit Komma abgetrennt. Das finite Verb steht meist am Ende. weil = Grund, obwohl = Gegengrund, wenn = Bedingung, damit = Zweck; bevor und nachdem = Zeit.'},
- {id:'mood',name:'Konjunktiv-Turm',icon:'🗼',x:1000,y:350,extra:true,rule:'Konjunktiv I: Er sagt, er sei müde; sie habe Zeit. Konjunktiv II für Wünsche und Möglichkeiten: Ich wäre gern dort; wenn ich Zeit hätte, würde ich kommen.'}
+ {id:'words',name:'Wortarten-Labor',icon:'🔬',x:220,y:180,rule:'Unterscheide Nomen, Artikel, Pronomen, Adjektiv, Adverb und Verb. Entscheidend ist immer die Aufgabe des einzelnen Wortes im Satz.'},
+ {id:'reorder',name:'Umstellproben-Pfad',icon:'🔀',x:550,y:130,rule:'Die Wörter eines Satzgliedes werden nur gemeinsam verschoben. Was beim Umstellen zusammenbleibt, gehört zu einem Satzglied.'},
+ {id:'sentenceparts',name:'Satzglieder-Zentrale',icon:'🧩',x:875,y:185,rule:'Benenne Subjekt, Prädikat, Akkusativobjekt, Dativobjekt und adverbiale Bestimmungen. Markiere immer die vollständige Wortgruppe.'},
+ {id:'questions',name:'Frageproben-Brücke',icon:'❓',x:200,y:455,rule:'Wer oder was? Subjekt. Was tut/geschieht? Prädikat. Wen oder was? Akkusativobjekt. Wem? Dativobjekt. Wo, wann, warum oder wie? adverbiale Bestimmung.'},
+ {id:'objects',name:'Objekt-Arena',icon:'🎯',x:475,y:535,rule:'Wem? führt zum Dativobjekt. Wen oder was? führt zum Akkusativobjekt. Stelle die Frage mit dem ganzen übrigen Satz.'},
+ {id:'adverbials',name:'Adverbial-Kompass',icon:'🧭',x:830,y:475,rule:'Ort: Wo, wohin, woher? Zeit: Wann, wie lange? Grund: Warum? Art und Weise: Wie?'},
+ {id:'exam',name:'Prüfungs-Mix',icon:'🏆',x:1000,y:350,rule:'Arbeite wie in der Klassenarbeit: Satz lesen, Prädikat finden, die passende Frage stellen und die vollständige Wortgruppe bestimmen.'}
 ];
 const wisdom={
  general:[
@@ -21,32 +21,30 @@ const wisdom={
   ['Was passiert und was wird gemacht? Das Verb hält jeden Satz auf Trab!','Verben sagen, was jemand tut oder was geschieht: laufen, denken, wachsen.'],
   ['Wann, wo, wie und warum? Das Adverb erklärt’s rundherum!','Adverbien geben Umstände an, zum Beispiel gestern, dort, gern oder deshalb.']
  ],
- cases:[
+ reorder:[
+  ['Was zusammen wandert, wird als Satzglied erkannt!','Bei der Umstellprobe verschiebst du eine ganze Wortgruppe. Die Wörter darin bleiben zusammen.'],
+  ['Umstellen, ohne zu zerlegen – so kommst du Satzgliedern auf die Fährten!','Bilde mehrere sinnvolle Satzstellungen. Jede gemeinsam verschiebbare Gruppe ist ein Satzglied.']
+ ],
+ sentenceparts:[
   ['Wer oder was steht hier herum? Der Nominativ – der macht sich wichtig!','Frage nach dem Nominativ mit „Wer oder was?“. Er ist meist der Täter im Satz.'],
-  ['Wessen Keks ist verschwunden? Der Genitiv will den Besitzer erkunden!','Das entscheidende Fragewort ist „Wessen?“. Der Genitiv zeigt oft Zugehörigkeit.'],
   ['Wem gebe ich den Kuchen? Dem Dativ, dem Schlauen!','Das entscheidende Fragewort ist „Wem?“. Oft erkennst du ihn an dem oder einem.'],
   ['Wen oder was frisst der Drache? Der Akkusativ kennt die Sache!','Frage mit „Wen oder was?“. Beim männlichen Nomen steht oft den oder einen.']
  ],
- subject:[
+ questions:[
   ['Wer macht den Quatsch? Das Subjekt war’s!','Frage „Wer oder was tut etwas?“. Die ganze Antwort gehört zum Subjekt, etwa „der kleine Hund“.'],
-  ['Der Täter ist nicht immer vorn – such Wer oder was, sonst bleibst du verlor’n!','Das Subjekt kann auch in der Mitte oder am Ende eines Satzes stehen.']
+  ['Wem, wen, wo, wann, warum, wie? Die richtige Frage führt dich wie nie!','Jedes Satzglied hat seine Frageprobe. Formuliere die Frage immer mit dem übrigen Satz.']
  ],
- predicate:[
-  ['Was tut das Subjekt? Das Prädikat verrät’s direkt!','Das Prädikat besteht aus einem Verb und sagt, was getan wird oder geschieht.'],
-  ['Räumt Paul sein Zimmer auf, passen zwei Verbteile drauf!','Ein Prädikat kann getrennt sein: „räumt … auf“ oder „hat … geschlafen“. Markiere alle Teile.']
+ objects:[
+  ['Wem gebe ich den Kuchen? Dem Dativ, dem Schlauen!','Das Dativobjekt findest du mit der Frage „Wem?“.'],
+  ['Wen oder was frisst der Drache? Der Akkusativ kennt die Sache!','Das Akkusativobjekt findest du mit „Wen oder was?“.']
  ],
- spelling:[
-  ['Mehrzahl machen, Endlaut knacken!','Verlängere ein Wort: Aus Hund wird Hunde. So hörst du das d am Ende.'],
-  ['Such die Wortfamilie – sie verrät dir ä und äu!','Leite das Wort ab: Baum gehört zu Bäume. Deshalb schreibt man äu.'],
-  ['Dieses, jenes, welches passt? Dann schreibt man das – sonst dass!','Kannst du eines der Ersatzwörter einsetzen, schreibst du „das“. Sonst steht häufig „dass“.']
+ adverbials:[
+  ['Wo, wann, warum und wie? Vier Angaben – vergiss sie nie!','Ort antwortet auf wo, Zeit auf wann, Grund auf warum und Art und Weise auf wie.'],
+  ['Wo zeigt den Ort, wann zeigt die Zeit – warum den Grund, wie die Art und Weise zeigt!','Markiere die vollständige Antwort, zum Beispiel „mit großer Geduld“.']
  ],
- clauses:[
-  ['Im Nebensatz, das ist bekannt, steht das Verb meist ganz am Rand!','Bei „weil Paul heute lernt“ steht das gebeugte Verb „lernt“ am Ende.'],
-  ['Kommt der Nebensatz herbei, macht das Komma Platz für zwei!','Hauptsatz und Nebensatz werden durch ein Komma voneinander getrennt.']
- ],
- mood:[
-  ['Wäre, hätte, könnte – der Konjunktiv erfüllt fast jeden Wunsch!','Der Konjunktiv II beschreibt Wünsche, Möglichkeiten und Dinge, die nicht wirklich sind.'],
-  ['Er sagt, er sei: Hörst du fremde Rede dabei?','Der Konjunktiv I wird oft in der indirekten Rede benutzt: „Er sagt, er sei müde.“']
+ exam:[
+  ['Lesen, fragen, prüfen, nennen – so kannst du jedes Satzglied erkennen!','Arbeite Schritt für Schritt und nenne bei Objekten und Angaben immer die genaue Art.'],
+  ['Erst das Verb, dann die Frage – so gewinnst du jede Grammatik-Jagd!','Das Prädikat hilft dir, eine vollständige Frage nach dem gesuchten Satzglied zu bauen.']
  ]
 };
 let lastWisdom=-1;
