@@ -1,17 +1,1354 @@
-<!doctype html><html lang="de"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#15394a"><meta name="description" content="Spanisch üben in drei Tagen: kurze Lernblöcke, faire Rückmeldung und Hörverstehen."><title>Pauls Spanischtraining · 3 Tage</title><style>
-:root{font-family:system-ui,sans-serif;color:#193144;background:#eef3f7}body{max-width:950px;margin:auto;padding:24px}header{background:#15394a;color:white;padding:28px;border-radius:20px}h1{margin:0 0 8px;font-size:30px}h2{font-size:23px}nav{display:flex;gap:10px;margin:22px 0;flex-wrap:wrap}button,select,input,textarea{font:inherit}button{background:#146b72;color:white;border:0;border-radius:9px;padding:11px 15px;cursor:pointer}button.secondary{background:#dce8ed;color:#193144}nav button.active{background:#15394a;box-shadow:0 3px 0 #eea845}article{background:white;padding:25px;border-radius:16px;margin-bottom:20px;box-shadow:0 3px 12px #1231}.note{color:#526572}.question{padding:13px 0;border-bottom:1px solid #e3e9ec}.question label{display:block;margin-bottom:7px}input,select,textarea{padding:10px;border:1px solid #a9bac5;border-radius:7px;max-width:100%;box-sizing:border-box}input{width:330px}select{width:100%}textarea{width:100%;min-height:170px;margin:12px 0}.feedback{display:block;margin-top:7px}.good{color:#14603c}.near{color:#8b5c00}.bad{color:#a83728}.reading{white-space:pre-line;background:#edf5f7;border-left:4px solid #146b72;padding:18px;line-height:1.7}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}details{margin:15px 0}summary{cursor:pointer}li{margin:7px 0}.intro{line-height:1.6}small{line-height:1.5}footer{margin:25px 0;color:#526572}@media print{nav,.actions,button,.feedback{display:none}article{break-inside:avoid;box-shadow:none}body{padding:0;background:white}.day{display:block!important}header{color:black;background:white}details:not([open])>*:not(summary){display:none}}
-@media(max-width:600px){body{padding:12px}header{padding:22px 18px}h1{font-size:27px}article{padding:18px 15px}nav{position:sticky;top:0;z-index:10;background:#eef3f7;padding:10px 0;gap:6px}nav button{flex:1;padding:12px 6px;font-size:14px}input,select,textarea{font-size:16px;min-height:46px}input{width:100%}.actions button{flex:1;min-height:46px}.reading{padding:13px}summary{padding:8px 0}}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #eea845;outline-offset:3px}</style><header><h1>¡Vamos, Paul!</h1><div>Dein Spanischtraining bis Montag, 9. November 2026</div></header>
-<p class="intro">Drei Tage, je drei überschaubare Blöcke. Nach jedem Block: fünf Minuten Pause. Freitag etwa 35–40 Minuten, Samstag 35–45 Minuten, Sonntag 40–50 Minuten. Du kannst die Blöcke über den Tag verteilen.</p>
-<details><summary>So funktioniert die faire Rückmeldung</summary><p>Großschreibung, Akzente, ñ/n, Satzzeichen und zusätzliche Leerzeichen werden ignoriert. Ein kleiner Tippfehler führt bei längeren Wörtern zur gelben Rückmeldung „Fast richtig“ – ohne Punktabzug. Kurze Verbformen werden genauer geprüft: <b>va</b> und <b>vas</b> oder <b>como</b> und <b>come</b> sind unterschiedliche Formen und deshalb Lernfehler. Gelbe Antworten zählen als geschafft, die richtige Schreibweise wird angezeigt. Es gibt keine Schulnote und keinen Abzug für Versuche.</p><p>Hier darfst du Sonderzeichen weglassen. Für die Klassenarbeit solltest du dir die korrekte Schreibweise trotzdem ansehen – dort entscheidet die Lehrkraft über die Bewertung.</p></details>
-<p><small>Grundlage: dein Themenblatt „Klausurthemen Spanisch 8“ sowie die fotografierten Seiten aus Unidad 4 und 5. Übungen und Lesetexte sind neu erstellt. Schwerpunkt: Unidad 4 sowie 5 Primer paso/A. Zusätzliche 5B-Themen sind freiwillig. Antworten werden, sofern der Browser es erlaubt, nur auf diesem Gerät gespeichert.</small></p><nav id="nav"></nav><main id="main"></main><footer>Kein Stress bei einem Fehler: richtige Form ansehen, laut sagen und später noch einmal probieren. <button class="secondary" onclick="window.print()">Drucken / als PDF speichern</button></footer><script>
-const blocks=[{"day": 0, "title": "1 · Wochentage & Zahlen", "note": "10–12 Minuten · Trage nur ein Wort oder eine Zahl ein.", "qs": [{"p": "Montag heißt …", "a": ["lunes"], "opts": null}, {"p": "Mittwoch heißt …", "a": ["miércoles"], "opts": null}, {"p": "Donnerstag heißt …", "a": ["jueves"], "opts": null}, {"p": "Samstag heißt …", "a": ["sábado"], "opts": null}, {"p": "Nach viernes kommt …", "a": ["sábado"], "opts": null}, {"p": "Vor martes kommt …", "a": ["lunes"], "opts": null}, {"p": "Welche Zahl ist veintidós?", "a": ["22"], "opts": null}, {"p": "Welche Zahl ist treinta y siete?", "a": ["37"], "opts": null}, {"p": "Welche Zahl ist sesenta y ocho?", "a": ["68"], "opts": null}, {"p": "Welche Zahl ist noventa y tres?", "a": ["93"], "opts": null}, {"p": "21 ausgeschrieben", "a": ["veintiuno"], "opts": null}, {"p": "100 ausgeschrieben", "a": ["cien"], "opts": null}], "text": "", "audio": ""}, {"day": 0, "title": "2 · Uhrzeiten erkennen", "note": "10–12 Minuten · Wähle die passende Antwort.", "qs": [{"p": "01:00", "a": ["Es la una."], "opts": ["Son las una.", "Es la una.", "Es la dos."]}, {"p": "08:15", "a": ["Son las ocho y cuarto."], "opts": ["Son las ocho menos cuarto.", "Son las ocho y cuarto.", "Son las ocho y media."]}, {"p": "09:30", "a": ["Son las nueve y media."], "opts": ["Son las nueve y media.", "Son las diez y media.", "Son las nueve y cuarto."]}, {"p": "16:45", "a": ["Son las cinco menos cuarto."], "opts": ["Son las cuatro menos cuarto.", "Son las cinco y cuarto.", "Son las cinco menos cuarto."]}, {"p": "15:50", "a": ["Son las cuatro menos diez."], "opts": ["Son las cuatro menos diez.", "Son las tres y diez.", "Son las cinco menos diez."]}, {"p": "13:15", "a": ["Es la una y cuarto."], "opts": ["Es la una y cuarto.", "Son las dos menos cuarto.", "Es la una menos cuarto."]}, {"p": "„um ein Uhr“ heißt …", "a": ["a la una"], "opts": ["a las una", "a la una", "de la una"]}, {"p": "„von neun bis zehn“ heißt …", "a": ["de nueve a diez"], "opts": ["a las nueve y diez", "de nueve a diez", "de nueve y diez"]}, {"p": "Son las dos menos cinco. → Uhrzeit (vormittags)", "a": ["01:55"], "opts": null}, {"p": "Son las diez y veinte. → Uhrzeit (vormittags)", "a": ["10:20"], "opts": null}], "text": "", "audio": ""}, {"day": 0, "title": "3 · Regelmäßige Verben & Lesen", "note": "12–15 Minuten · Erst Lücken, dann den kurzen Text lesen.", "qs": [{"p": "yo … (hablar)", "a": ["hablo"], "opts": null}, {"p": "tú … (comer)", "a": ["comes"], "opts": null}, {"p": "ella … (vivir)", "a": ["vive"], "opts": null}, {"p": "nosotros … (hablar)", "a": ["hablamos"], "opts": null}, {"p": "vosotros … (comer)", "a": ["coméis"], "opts": null}, {"p": "ellos … (vivir)", "a": ["viven"], "opts": null}, {"p": "yo … (escribir)", "a": ["escribo"], "opts": null}, {"p": "vosotras … (subir)", "a": ["subís"], "opts": null}, {"p": "Wie alt ist Sara? (Zahl)", "a": ["13"], "opts": null}, {"p": "Mit wem wohnt sie?", "a": ["con su madre y su hermano"], "opts": ["con su padre", "con su madre y su hermano", "con sus abuelos"]}, {"p": "Wann hört sie Musik?", "a": ["los martes"], "opts": ["los lunes", "los martes", "los domingos"]}, {"p": "Was macht sie sonntags?", "a": ["lee cómics"], "opts": ["lee cómics", "toca la guitarra", "practica deporte"]}], "text": "¡Hola! Me llamo Sara y tengo trece años. Vivo en Madrid con mi madre y mi hermano. Los martes escucho música a las cinco. Los domingos leo cómics. Mi hermano toca la guitarra.", "audio": ""}, {"day": 1, "title": "4 · Die besonderen Verben", "note": "12–15 Minuten · Achte auf die Person. Akzente musst du hier nicht tippen.", "qs": [{"p": "yo … (saber)", "a": ["sé"], "opts": null}, {"p": "tú … (saber)", "a": ["sabes"], "opts": null}, {"p": "nosotros … (saber)", "a": ["sabemos"], "opts": null}, {"p": "vosotros … (saber)", "a": ["sabéis"], "opts": null}, {"p": "yo … (hacer)", "a": ["hago"], "opts": null}, {"p": "ella … (hacer)", "a": ["hace"], "opts": null}, {"p": "vosotros … (hacer)", "a": ["hacéis"], "opts": null}, {"p": "ellos … (hacer)", "a": ["hacen"], "opts": null}, {"p": "yo … (ver)", "a": ["veo"], "opts": null}, {"p": "nosotros … (ver)", "a": ["vemos"], "opts": null}, {"p": "vosotros … (ver)", "a": ["veis"], "opts": null}, {"p": "yo … (tener)", "a": ["tengo"], "opts": null}, {"p": "tú … (tener)", "a": ["tienes"], "opts": null}, {"p": "ella … (tener)", "a": ["tiene"], "opts": null}, {"p": "nosotros … (tener)", "a": ["tenemos"], "opts": null}, {"p": "vosotros … (tener)", "a": ["tenéis"], "opts": null}, {"p": "ellos … (tener)", "a": ["tienen"], "opts": null}], "text": "", "audio": ""}, {"day": 1, "title": "5 · Ir, Ziele & Wochenplan", "note": "12–15 Minuten · Ergänze die Lücken.", "qs": [{"p": "yo … (ir)", "a": ["voy"], "opts": null}, {"p": "tú … (ir)", "a": ["vas"], "opts": null}, {"p": "ella … (ir)", "a": ["va"], "opts": null}, {"p": "nosotros … (ir)", "a": ["vamos"], "opts": null}, {"p": "vosotros … (ir)", "a": ["vais"], "opts": null}, {"p": "ellos … (ir)", "a": ["van"], "opts": null}, {"p": "Voy … parque.", "a": ["al"], "opts": null}, {"p": "Vamos … piscina.", "a": ["a la"], "opts": null}, {"p": "Van … tiendas.", "a": ["a las"], "opts": null}, {"p": "Vais … supermercados.", "a": ["a los"], "opts": null}, {"p": "Los lunes … música. (yo, escuchar)", "a": ["escucho"], "opts": null}, {"p": "Los miércoles … deporte. (nosotros, practicar)", "a": ["practicamos"], "opts": null}, {"p": "El viernes … al cine. (yo, ir)", "a": ["voy"], "opts": null}, {"p": "Tengo clase … ocho a nueve.", "a": ["de"], "opts": null}, {"p": "Quedamos … las cuatro.", "a": ["a"], "opts": null}, {"p": "La clase empieza … la una.", "a": ["a"], "opts": null}], "text": "", "audio": ""}, {"day": 1, "title": "6 · Hörverstehen: Plan fürs Wochenende", "note": "10–12 Minuten · Höre zweimal zu. Beantworte mit Zahlen oder Auswahl. Der Text bleibt zunächst verborgen.", "qs": [{"p": "An welchem Tag geht Lucía ins Sportzentrum?", "a": ["sábado"], "opts": ["viernes", "sábado", "domingo"]}, {"p": "Wann beginnt der Sport? (24-Stunden-Format)", "a": ["10:30"], "opts": null}, {"p": "Wann endet der Sport? (24-Stunden-Format)", "a": ["12:00"], "opts": null}, {"p": "Wie alt ist ihr Bruder? (Zahl)", "a": ["15"], "opts": null}, {"p": "Wann treffen sie sich zum Kino? (24-Stunden-Format)", "a": ["16:45"], "opts": null}, {"p": "Was macht Lucía sonntags?", "a": ["hace los deberes"], "opts": ["hace los deberes", "va al cine", "monta a caballo"]}, {"p": "Welche Zahl hörst du als Busnummer?", "a": ["74"], "opts": null}, {"p": "Mit wem geht sie ins Kino?", "a": ["con sus amigos"], "opts": ["con su madre", "con sus amigos", "con sus abuelos"]}], "text": "", "audio": "Hola, soy Lucía. Tengo catorce años y mi hermano tiene quince. El sábado voy al polideportivo. Practico deporte de diez y media a doce de la mañana. Por la tarde voy al cine con mis amigos. Quedamos a las cinco menos cuarto de la tarde. Vamos en el autobús número setenta y cuatro. El domingo hago los deberes y leo un libro."}, {"day": 2, "title": "7 · Gemischte Generalprobe", "note": "12–15 Minuten · Erst ohne Hilfe versuchen.", "qs": [{"p": "„achtundfünfzig“ auf Spanisch", "a": ["cincuenta y ocho"], "opts": null}, {"p": "„sechsundzwanzig“ auf Spanisch", "a": ["veintiséis"], "opts": null}, {"p": "„siebzig“ auf Spanisch", "a": ["setenta"], "opts": null}, {"p": "Son las seis menos cuarto. → Uhrzeit (nachmittags)", "a": ["17:45"], "opts": null}, {"p": "Es la una y media. → Uhrzeit (nachmittags)", "a": ["13:30"], "opts": null}, {"p": "Nosotros … al instituto. (ir)", "a": ["vamos"], "opts": null}, {"p": "Yo no … dónde está el libro. (saber)", "a": ["sé"], "opts": null}, {"p": "Vosotros … la televisión. (ver)", "a": ["veis"], "opts": null}, {"p": "Ella … los deberes. (hacer)", "a": ["hace"], "opts": null}, {"p": "Mis amigos … quince años. (tener)", "a": ["tienen"], "opts": null}, {"p": "Tú … un mensaje. (escribir)", "a": ["escribes"], "opts": null}, {"p": "El sábado voy … cine.", "a": ["al"], "opts": null}], "text": "", "audio": ""}, {"day": 2, "title": "8 · Lesen & Mediation vorbereiten", "note": "10–12 Minuten · Entnimm die Informationen; kurze Antworten reichen.", "qs": [{"p": "Wann beginnt die Radtour? (24-Stunden-Format)", "a": ["09:30"], "opts": null}, {"p": "Wann endet sie? (24-Stunden-Format)", "a": ["11:00"], "opts": null}, {"p": "Wie viel kostet sie? Nur Zahl.", "a": ["12"], "opts": null}, {"p": "Wo treffen sie sich?", "a": ["en el parque"], "opts": ["en el instituto", "en el parque", "en el cine"]}, {"p": "Wie alt ist Daniel? Nur Zahl.", "a": ["14"], "opts": null}, {"p": "Für wen ist der Kinobesuch ungeeignet?", "a": ["Für jemanden, der um 18 Uhr zu Hause sein muss."], "opts": ["Für jemanden, der um 18 Uhr zu Hause sein muss.", "Für jemanden, der 14 Jahre alt ist.", "Für jemanden, der Rad fahren mag."]}, {"p": "Wähle die passende spanische Vermittlung: „Die Radtour kostet zwölf Euro.“", "a": ["La ruta en bicicleta cuesta doce euros."], "opts": ["La ruta en bicicleta cuesta veinte euros.", "La ruta en bicicleta cuesta doce euros.", "La película cuesta doce euros."]}, {"p": "Wähle: „Wir treffen uns um halb zehn im Park.“", "a": ["Quedamos a las nueve y media en el parque."], "opts": ["Quedamos a las diez y media en el parque.", "Quedamos a las nueve y media en el parque.", "Quedamos de nueve a diez en el parque."]}], "text": "¡Hola! Soy Daniel y tengo catorce años. El domingo hay una ruta en bicicleta de nueve y media a once de la mañana. Cuesta doce euros. Quedamos en el parque. Por la tarde vamos al cine de cinco a siete. Mi amiga Ana tiene que estar en casa a las seis.\n\nWort-Hilfe: cuesta = kostet; una ruta en bicicleta = eine Radtour; tiene que = muss.", "audio": ""}, {"day": 2, "title": "9 · Jetzt selbst schreiben", "note": "15–20 Minuten · Zwei kurze Texte. Keine automatische Benotung: Prüfe mit der Checkliste und nutze die Beispiele erst danach.", "qs": [], "text": "", "audio": ""}];
-const dates=['Freitag · 06.11.','Samstag · 07.11.','Sonntag · 08.11.'];
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#122323">
+<title>Spanisch-Arena · Pauls Training</title>
+<style>
+:root{--bg:#f2f5f3;--ink:#122323;--muted:#546564;--line:#d6dfda;--lime:#d9fc68;--green:#176649;--red:#9c2840;--white:#fff}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,Segoe UI,sans-serif}button,input,select{font:inherit}button,select{cursor:pointer}button{border:1px solid var(--line);border-radius:12px;padding:12px 18px;background:white;color:var(--ink);font-weight:700;min-height:46px}button:hover:not(:disabled){border-color:var(--green);background:#f0f8e3}button:disabled{cursor:default;opacity:.6}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #327bd8;outline-offset:3px}.primary{background:var(--lime);border-color:var(--lime)}.dark{background:var(--ink);color:white;border-color:var(--ink)}.dark:hover:not(:disabled){background:var(--green);color:white}.wrap{width:min(1180px,calc(100% - 40px));margin:auto}header{background:var(--ink);color:white}header .wrap{min-height:86px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{font-weight:900;font-size:1.2rem;letter-spacing:-.04em;display:flex;align-items:center;gap:12px}.logo{background:var(--lime);color:var(--ink);border-radius:10px;padding:3px 12px;font-size:1.7rem}header small{color:#c2d1cd}main{padding:32px 0 50px}.eyebrow{font-size:.85rem;letter-spacing:.09em;text-transform:uppercase;font-weight:800;color:var(--green)}h1{font-size:clamp(1.9rem,4vw,2.8rem);letter-spacing:-.055em;line-height:1.15;margin:8px 0 12px}h2{font-size:1.35rem;line-height:1.3;margin:0 0 14px;letter-spacing:-.025em}h3{margin:0 0 8px;font-size:1.05rem}p{margin:0 0 16px}.muted,small{color:var(--muted)}small{font-size:.875rem}.top{display:flex;justify-content:space-between;gap:24px;align-items:center;margin-bottom:28px}.streak{background:var(--lime);border-radius:18px;padding:18px 26px;white-space:nowrap}.streak strong{font-size:1.7rem;display:block}.layout{display:grid;grid-template-columns:minmax(0,1fr) 310px;gap:24px}.panel{background:white;border:1px solid var(--line);border-radius:22px;padding:26px;margin-bottom:22px}.modebar{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}.modebar button[aria-pressed=true]{background:var(--ink);color:white;border-color:var(--ink)}.topics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.topic{text-align:left;position:relative;padding:18px;display:flex;gap:14px;align-items:start;min-width:0}.topic strong{display:block;font-size:1.02rem}.topic small{display:block;font-weight:400}.topic .num{background:#edf2ef;border-radius:9px;padding:4px 9px;color:var(--green);font-variant-numeric:tabular-nums}.topic[aria-pressed=true]{border:2px solid var(--green);padding:17px;background:#f3f9ee}.tag{display:inline-block;border-radius:6px;background:#eef1f0;padding:2px 7px;font-size:.8rem;font-weight:650}.startrow{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:20px}.startrow .primary{flex:1}.metric{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px}.metric strong{display:block;font-size:1.8rem;letter-spacing:-.06em}.metric small{display:block}.bar{height:8px;border-radius:10px;background:#e7eeea;overflow:hidden;margin:6px 0 15px}.bar span{display:block;height:100%;background:var(--green);border-radius:10px}.topicstat{display:flex;justify-content:space-between;gap:8px;font-size:.875rem}.notice{border-left:3px solid #b7cd84;padding-left:14px;font-size:.9rem}.sessionhead{display:flex;justify-content:space-between;gap:12px;align-items:center}.pill{background:var(--ink);color:var(--lime);border-radius:8px;padding:6px 12px;font-weight:800;font-variant-numeric:tabular-nums}.question{font-size:1.4rem;font-weight:700;line-height:1.6;margin:24px 0}.question mark{background:#e4f5a3;padding:3px 5px;border-radius:5px}.answers{display:grid;grid-template-columns:1fr 1fr;gap:12px}.answers button{text-align:left;min-height:62px}.tokens{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0}.tokens button{font-size:1.15rem}.tokens button[aria-pressed=true]{background:var(--ink);color:white;border-color:var(--ink)}.feedback{border-radius:12px;padding:16px;margin:20px 0;background:#eef6ef;border:1px solid #b2d5be}.feedback.bad{background:#fff1f2;border-color:#e1b7bf}.feedback strong{display:block;margin-bottom:4px}.textanswer{width:100%;border:2px solid #b4c5bc;border-radius:12px;padding:14px;margin-bottom:15px}.buildzone{min-height:74px;border:2px dashed #b4c5bc;border-radius:12px;padding:12px;margin:18px 0}.buildzone .tokens{margin:0}.bottomrow{display:flex;gap:10px;justify-content:space-between;margin-top:22px;flex-wrap:wrap}details{border-top:1px solid var(--line);padding-top:14px;margin-top:14px}summary{cursor:pointer;font-weight:700}details p{margin-top:12px}.learn-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.learn-grid article{background:#f3f6f3;padding:18px;border-radius:14px}.resultnum{font-size:3.5rem;font-weight:900;letter-spacing:-.07em}.resultlist{display:grid;gap:12px;margin:20px 0}.resultlist article{border:1px solid var(--line);border-radius:12px;padding:14px}.badge{display:inline-block;padding:7px 10px;border-radius:8px;background:var(--lime);margin:0 5px 8px 0;font-size:.875rem;font-weight:700}footer{padding:22px 0;border-top:1px solid var(--line);font-size:.875rem;color:var(--muted)}[hidden]{display:none!important}@media(max-width:900px){.layout{grid-template-columns:1fr}.sidebar{display:grid;grid-template-columns:1fr 1fr;gap:18px}.sidebar .panel{margin:0}}@media(max-width:560px){.wrap{width:calc(100% - 24px)}header .wrap{min-height:72px}header small{display:none}main{padding-top:22px}.top{align-items:start;gap:10px}.streak{padding:12px;font-size:.8rem}.streak strong{font-size:1.3rem}h1{font-size:1.9rem}.panel{padding:18px;border-radius:17px}.topics,.learn-grid,.sidebar{grid-template-columns:1fr}.answers{grid-template-columns:1fr}.question{font-size:1.2rem}.modebar button{flex:1;padding:10px}.sidebar{gap:18px}.top p{font-size:.9rem}.sessionhead{align-items:start}.tokens{gap:6px}.tokens button{padding:9px 12px}}
+
+textarea{font:inherit;min-height:145px}button:focus-visible,textarea:focus-visible{outline:3px solid #327bd8;outline-offset:3px}
+.reading{white-space:pre-line;background:#f3f6f3;border-left:3px solid var(--green);padding:14px;margin:12px 0}
+.feedback.near{background:#fff7df;border-color:#e1c775}.feedback p{margin:0 0 6px}
+.actions{display:flex;flex-wrap:wrap;gap:8px}.daychoice{margin-bottom:18px}.topic .tag{margin-top:5px}
+.top{flex-wrap:wrap}.panel{min-width:0}#writing h3{margin-top:20px}.resultlist p{margin-bottom:6px}
+@media(max-width:560px){.brand{font-size:1rem;gap:7px}.logo{font-size:1.2rem;padding:4px 8px}.panel .actions button{flex:1}.streak{white-space:normal}.textanswer{font-size:16px}}
+</style></head>
+<body>
+<header><div class="wrap"><div class="brand"><span class="logo" aria-hidden="true">E</span> SPANISCH / ARENA</div><small>Pauls Training · Klasse 8</small><button id="learnBtn">Spickzettel</button></div></header>
+<main class="wrap">
+<div class="top"><div><span class="eyebrow">Spanisch in drei Tagen</span><h1>¡Vamos, Paul!</h1><p class="muted">Wähle einen Block, sammle Punkte und sieh nach jeder Antwort, warum sie passt.</p></div><div class="streak"><strong id="level">Level 1</strong><span id="xp">0 XP gesammelt</span></div></div>
+<div class="layout"><div>
+<section id="home" class="panel"><h2>Wähle deinen Übungsblock</h2><div class="modebar daychoice" id="days" aria-label="Lerntag"></div><div class="topics" id="topics"></div><div class="startrow"><button id="retry">Fehler dieses Tages üben</button></div></section>
+<section id="game" class="panel" aria-label="Übungsrunde" hidden>
+<div class="sessionhead"><h2 id="blockTitle"></h2><span id="counter" class="pill"></span></div>
+<div class="bar" aria-hidden="true"><span id="progress"></span></div>
+<div class="topicstat"><span id="roundPoints"></span><span id="combo"></span></div>
+<div id="material"></div><div id="task"></div><div id="feedback" class="feedback" role="status" hidden></div>
+<div class="bottomrow"><button id="quit">Runde beenden</button><button id="hint">Tipp zeigen</button><button id="next" class="primary" hidden>Weiter →</button></div>
+<p id="hintText" class="notice" hidden></p>
+</section>
+<section id="result" class="panel" hidden></section>
+<section id="learn" class="panel" hidden><div class="sessionhead"><h2>Dein Spickzettel</h2><button id="closeLearn">Schließen</button></div><div id="learnContent" class="learn-grid"></div></section>
+<section id="writing" class="panel" hidden><div class="sessionhead"><h2>Sonntag · Jetzt selbst schreiben</h2><button id="closeWriting">Zur Übersicht</button></div><h3>A · Nachricht an einen spanischen Freund</h3><p>Schreibe 6–8 kurze spanische Sätze. Du darfst Angaben erfinden. Nenne deinen Namen und dein Alter, zwei Hobbys, zwei Wochentage mit Aktivitäten, eine genaue Uhrzeit und eine Zeitspanne. Verwende mindestens einmal <b>ir</b> mit einem Ziel und einmal <b>hacer, ver oder saber</b>.</p><textarea aria-label="Deine Nachricht" placeholder="¡Hola! Me llamo …"></textarea><details><summary>Starthilfe, wenn du festhängst</summary><p>Me llamo … / Tengo … años. / Los lunes … / A las … / De … a … / Voy al … / Voy a la … / Hago … / Veo …</p></details><h3>B · Kleine Mediation</h3><p>Dein spanischer Freund versteht diesen deutschen Plan nicht. Schreibe ihm 3–4 kurze spanische Sätze: <b>Am Samstag geht ihr ins Kino. Ihr trefft euch um 15:45 Uhr am Kino. Der Film dauert von 16 bis 18 Uhr. Am Sonntag machst du Hausaufgaben.</b> Du musst nicht Wort für Wort übersetzen.</p><textarea aria-label="Deine Mediation" placeholder="El sábado …"></textarea><h3>Deine Checkliste</h3><ul><li>Passt die Verbform zur Person?</li><li>Habe ich mein Alter mit tener ausgedrückt?</li><li>Steht bei „um“ a la una bzw. a las …?</li><li>Steht bei Zeitspannen de … a …?</li><li>Steht vor el als Ziel al und vor la a la?</li><li>Steht no direkt vor dem Verb, wenn ich etwas verneine?</li><li>Sind alle geforderten Informationen enthalten?</li></ul><p><b>Bewertung:</b> Inhalt und verständliche Sätze zuerst. Kleine Tippfehler und Sonderzeichen werden nicht abgestraft. Falsche Personenformen werden erklärt und verbessert. Es gibt viele richtige Texte; deshalb hier keine automatische „falsch“-Meldung. Du kannst deine Texte zur Rückmeldung in den Chat kopieren.</p><details><summary>Beispiel A · erst nach deinem Versuch öffnen</summary><p>¡Hola! Me llamo Pablo y tengo trece años. En mi tiempo libre escucho música y leo cómics. Los lunes hago los deberes a las cuatro. Los martes practico deporte de cinco a seis. Los sábados voy al cine con mis amigos. Quedamos a las tres y media. Los domingos veo la televisión. ¿Y tú?</p></details><details><summary>Beispiel B · erst nach deinem Versuch öffnen</summary><p>El sábado vamos al cine. Quedamos a las cuatro menos cuarto en el cine. La película es de cuatro a seis de la tarde. El domingo hago los deberes.</p></details><details><summary>Freiwilliger Zusatz aus 5B · nur wenn noch Energie da ist</summary><p>tener que + Infinitiv: Tengo que estudiar. = Ich muss lernen.</p><p>querer: quiero, quieres, quiere, queremos, queréis, quieren.<br>poder: puedo, puedes, puede, podemos, podéis, pueden.<br>jugar: juego, juegas, juega, jugamos, jugáis, juegan.</p><p>Sag laut: Ich möchte ins Kino gehen. / Wir können Rad fahren. / Er spielt Fußball.</p><details><summary>Beispiele</summary>Quiero ir al cine. / Podemos montar en bicicleta. / Él juega al fútbol.</details></details></section>
+</div><aside class="sidebar"><section class="panel"><h2>Dein Fortschritt</h2><div class="metric"><div><strong id="mastered"></strong><small>Aufgaben gelöst</small></div><div><strong id="bestCombo"></strong><small>Beste Serie</small></div></div><div class="bar" aria-hidden="true"><span id="masterBar"></span></div><p id="lastRound" class="muted"></p></section>
+<section class="panel"><h2>So zählen die Punkte</h2><p>Ein Treffer bringt <b>10 Punkte</b>. Ab drei Treffern in Folge gibt es einen Serienbonus. Ein Treffer mit Tipp bringt <b>5 Punkte</b>.</p><p class="notice">Akzente, ñ, Satzzeichen und kleine Tippfehler kosten keine Punkte. Achte auf die Verbform: <b>va</b> und <b>vas</b> sind verschiedene Antworten.</p><small>Fortschritt und Schreibentwürfe bleiben im jeweiligen Browser.</small></section></aside></div>
+</main><script>
+const blocks = [
+  {
+    "day": 0,
+    "title": "1 · Wochentage & Zahlen",
+    "note": "10–12 Minuten · Trage nur ein Wort oder eine Zahl ein.",
+    "qs": [
+      {
+        "p": "Montag heißt …",
+        "a": [
+          "lunes"
+        ],
+        "opts": null,
+        "why": "Die Woche beginnt mit lunes. Montag bis Freitag heißen lunes, martes, miércoles, jueves, viernes.",
+        "hint": "Sprich die Reihenfolge der Tage oder zerlege die Zahl in Zehner und Einer."
+      },
+      {
+        "p": "Mittwoch heißt …",
+        "a": [
+          "miércoles"
+        ],
+        "opts": null,
+        "why": "Miércoles ist der dritte Wochentag und hat einen Akzent auf dem é.",
+        "hint": "Sprich die Reihenfolge der Tage oder zerlege die Zahl in Zehner und Einer."
+      },
+      {
+        "p": "Donnerstag heißt …",
+        "a": [
+          "jueves"
+        ],
+        "opts": null,
+        "why": "Jueves kommt nach miércoles und vor viernes.",
+        "hint": "Sprich die Reihenfolge der Tage oder zerlege die Zahl in Zehner und Einer."
+      },
+      {
+        "p": "Samstag heißt …",
+        "a": [
+          "sábado"
+        ],
+        "opts": null,
+        "why": "Sábado ist der erste Tag des Wochenendes.",
+        "hint": "Sprich die Reihenfolge der Tage oder zerlege die Zahl in Zehner und Einer."
+      },
+      {
+        "p": "Nach viernes kommt …",
+        "a": [
+          "sábado"
+        ],
+        "opts": null,
+        "why": "Die Reihenfolge lautet jueves, viernes, sábado, domingo.",
+        "hint": "Sprich die Reihenfolge der Tage oder zerlege die Zahl in Zehner und Einer."
+      },
+      {
+        "p": "Vor martes kommt …",
+        "a": [
+          "lunes"
+        ],
+        "opts": null,
+        "why": "Lunes kommt direkt vor martes.",
+        "hint": "Sprich die Reihenfolge der Tage oder zerlege die Zahl in Zehner und Einer."
+      },
+      {
+        "p": "Welche Zahl ist veintidós?",
+        "a": [
+          "22"
+        ],
+        "opts": null,
+        "why": "Die Zahlen von 21 bis 29 werden zusammengeschrieben. Veintidós ist 20 + 2.",
+        "hint": "Sprich die Reihenfolge der Tage oder zerlege die Zahl in Zehner und Einer."
+      },
+      {
+        "p": "Welche Zahl ist treinta y siete?",
+        "a": [
+          "37"
+        ],
+        "opts": null,
+        "why": "Treinta ist 30, siete ist 7. Ab 31 verbindet y Zehner und Einer.",
+        "hint": "Sprich die Reihenfolge der Tage oder zerlege die Zahl in Zehner und Einer."
+      },
+      {
+        "p": "Welche Zahl ist sesenta y ocho?",
+        "a": [
+          "68"
+        ],
+        "opts": null,
+        "why": "Sesenta ist 60, ocho ist 8. Das ergibt 68.",
+        "hint": "Sprich die Reihenfolge der Tage oder zerlege die Zahl in Zehner und Einer."
+      },
+      {
+        "p": "Welche Zahl ist noventa y tres?",
+        "a": [
+          "93"
+        ],
+        "opts": null,
+        "why": "Noventa ist 90, tres ist 3. Das ergibt 93.",
+        "hint": "Sprich die Reihenfolge der Tage oder zerlege die Zahl in Zehner und Einer."
+      },
+      {
+        "p": "21 ausgeschrieben",
+        "a": [
+          "veintiuno"
+        ],
+        "opts": null,
+        "why": "Veinti- steht hier für 20, uno für 1. Beides wird zusammengeschrieben.",
+        "hint": "Sprich die Reihenfolge der Tage oder zerlege die Zahl in Zehner und Einer."
+      },
+      {
+        "p": "100 ausgeschrieben",
+        "a": [
+          "cien"
+        ],
+        "opts": null,
+        "why": "Für genau 100 sagt man cien.",
+        "hint": "Sprich die Reihenfolge der Tage oder zerlege die Zahl in Zehner und Einer."
+      }
+    ],
+    "text": "",
+    "audio": ""
+  },
+  {
+    "day": 0,
+    "title": "2 · Uhrzeiten erkennen",
+    "note": "10–12 Minuten · Wähle die passende Antwort.",
+    "qs": [
+      {
+        "p": "01:00",
+        "a": [
+          "Es la una."
+        ],
+        "opts": [
+          "Son las una.",
+          "Es la una.",
+          "Es la dos."
+        ],
+        "why": "Bei ein Uhr benutzt du die Einzahl: Es la una.",
+        "hint": "Überlege, ob Minuten dazukommen oder von der nächsten Stunde abgezogen werden."
+      },
+      {
+        "p": "08:15",
+        "a": [
+          "Son las ocho y cuarto."
+        ],
+        "opts": [
+          "Son las ocho menos cuarto.",
+          "Son las ocho y cuarto.",
+          "Son las ocho y media."
+        ],
+        "why": "Y cuarto heißt eine Viertelstunde nach der genannten Stunde.",
+        "hint": "Überlege, ob Minuten dazukommen oder von der nächsten Stunde abgezogen werden."
+      },
+      {
+        "p": "09:30",
+        "a": [
+          "Son las nueve y media."
+        ],
+        "opts": [
+          "Son las nueve y media.",
+          "Son las diez y media.",
+          "Son las nueve y cuarto."
+        ],
+        "why": "Y media heißt eine halbe Stunde nach neun.",
+        "hint": "Überlege, ob Minuten dazukommen oder von der nächsten Stunde abgezogen werden."
+      },
+      {
+        "p": "16:45",
+        "a": [
+          "Son las cinco menos cuarto."
+        ],
+        "opts": [
+          "Son las cuatro menos cuarto.",
+          "Son las cinco y cuarto.",
+          "Son las cinco menos cuarto."
+        ],
+        "why": "Menos cuarto heißt 15 Minuten vor fünf. Nachmittags ist das 16:45 Uhr.",
+        "hint": "Überlege, ob Minuten dazukommen oder von der nächsten Stunde abgezogen werden."
+      },
+      {
+        "p": "15:50",
+        "a": [
+          "Son las cuatro menos diez."
+        ],
+        "opts": [
+          "Son las cuatro menos diez.",
+          "Son las tres y diez.",
+          "Son las cinco menos diez."
+        ],
+        "why": "Menos diez heißt zehn Minuten vor vier, also 15:50 Uhr.",
+        "hint": "Überlege, ob Minuten dazukommen oder von der nächsten Stunde abgezogen werden."
+      },
+      {
+        "p": "13:15",
+        "a": [
+          "Es la una y cuarto."
+        ],
+        "opts": [
+          "Es la una y cuarto.",
+          "Son las dos menos cuarto.",
+          "Es la una menos cuarto."
+        ],
+        "why": "Auch um 13 Uhr benutzt du la una. Y cuarto ergänzt 15 Minuten.",
+        "hint": "Überlege, ob Minuten dazukommen oder von der nächsten Stunde abgezogen werden."
+      },
+      {
+        "p": "„um ein Uhr“ heißt …",
+        "a": [
+          "a la una"
+        ],
+        "opts": [
+          "a las una",
+          "a la una",
+          "de la una"
+        ],
+        "why": "Bei einer Uhrzeit mit una heißt es a la una. Bei den übrigen Stunden steht a las.",
+        "hint": "Überlege, ob Minuten dazukommen oder von der nächsten Stunde abgezogen werden."
+      },
+      {
+        "p": "„von neun bis zehn“ heißt …",
+        "a": [
+          "de nueve a diez"
+        ],
+        "opts": [
+          "a las nueve y diez",
+          "de nueve a diez",
+          "de nueve y diez"
+        ],
+        "why": "De … a … gibt Anfang und Ende an.",
+        "hint": "Überlege, ob Minuten dazukommen oder von der nächsten Stunde abgezogen werden."
+      },
+      {
+        "p": "Son las dos menos cinco de la madrugada. → Uhrzeit (24-Stunden-Format)",
+        "a": [
+          "01:55",
+          "1:55"
+        ],
+        "opts": null,
+        "why": "Dos menos cinco bedeutet fünf Minuten vor zwei, also 01:55 Uhr.",
+        "hint": "Überlege, ob Minuten dazukommen oder von der nächsten Stunde abgezogen werden."
+      },
+      {
+        "p": "Son las diez y veinte. → Uhrzeit (vormittags)",
+        "a": [
+          "10:20"
+        ],
+        "opts": null,
+        "why": "Y veinte addiert 20 Minuten zu zehn Uhr.",
+        "hint": "Überlege, ob Minuten dazukommen oder von der nächsten Stunde abgezogen werden."
+      }
+    ],
+    "text": "",
+    "audio": ""
+  },
+  {
+    "day": 0,
+    "title": "3 · Regelmäßige Verben & Lesen",
+    "note": "12–15 Minuten · Erst Lücken, dann den kurzen Text lesen.",
+    "qs": [
+      {
+        "p": "yo … (hablar)",
+        "a": [
+          "hablo"
+        ],
+        "opts": null,
+        "why": "Bei yo endet hablar auf -o: habl- + -o.",
+        "hint": "Achte auf die Person und die Endung oder suche die passende Stelle im Text."
+      },
+      {
+        "p": "tú … (comer)",
+        "a": [
+          "comes"
+        ],
+        "opts": null,
+        "why": "Bei tú endet ein regelmäßiges -er-Verb auf -es: com- + -es.",
+        "hint": "Achte auf die Person und die Endung oder suche die passende Stelle im Text."
+      },
+      {
+        "p": "ella … (vivir)",
+        "a": [
+          "vive"
+        ],
+        "opts": null,
+        "why": "Bei ella endet ein regelmäßiges -ir-Verb auf -e: viv- + -e.",
+        "hint": "Achte auf die Person und die Endung oder suche die passende Stelle im Text."
+      },
+      {
+        "p": "nosotros … (hablar)",
+        "a": [
+          "hablamos"
+        ],
+        "opts": null,
+        "why": "Bei nosotros endet ein regelmäßiges -ar-Verb auf -amos.",
+        "hint": "Achte auf die Person und die Endung oder suche die passende Stelle im Text."
+      },
+      {
+        "p": "vosotros … (comer)",
+        "a": [
+          "coméis"
+        ],
+        "opts": null,
+        "why": "Bei vosotros endet ein regelmäßiges -er-Verb auf -éis.",
+        "hint": "Achte auf die Person und die Endung oder suche die passende Stelle im Text."
+      },
+      {
+        "p": "ellos … (vivir)",
+        "a": [
+          "viven"
+        ],
+        "opts": null,
+        "why": "Bei ellos endet ein regelmäßiges -ir-Verb auf -en.",
+        "hint": "Achte auf die Person und die Endung oder suche die passende Stelle im Text."
+      },
+      {
+        "p": "yo … (escribir)",
+        "a": [
+          "escribo"
+        ],
+        "opts": null,
+        "why": "Bei yo endet auch das regelmäßige -ir-Verb auf -o.",
+        "hint": "Achte auf die Person und die Endung oder suche die passende Stelle im Text."
+      },
+      {
+        "p": "vosotras … (subir)",
+        "a": [
+          "subís"
+        ],
+        "opts": null,
+        "why": "Bei vosotras endet ein regelmäßiges -ir-Verb auf -ís.",
+        "hint": "Achte auf die Person und die Endung oder suche die passende Stelle im Text."
+      },
+      {
+        "p": "Wie alt ist Sara? (Zahl)",
+        "a": [
+          "13"
+        ],
+        "opts": null,
+        "why": "Tengo trece años bedeutet: Ich bin 13 Jahre alt.",
+        "hint": "Achte auf die Person und die Endung oder suche die passende Stelle im Text."
+      },
+      {
+        "p": "Mit wem wohnt sie?",
+        "a": [
+          "con su madre y su hermano"
+        ],
+        "opts": [
+          "con su padre",
+          "con su madre y su hermano",
+          "con sus abuelos"
+        ],
+        "why": "Con mi madre y mi hermano heißt: mit meiner Mutter und meinem Bruder.",
+        "hint": "Achte auf die Person und die Endung oder suche die passende Stelle im Text."
+      },
+      {
+        "p": "Wann hört sie Musik?",
+        "a": [
+          "los martes"
+        ],
+        "opts": [
+          "los lunes",
+          "los martes",
+          "los domingos"
+        ],
+        "why": "Los martes heißt dienstags. Danach folgt escucho música.",
+        "hint": "Achte auf die Person und die Endung oder suche die passende Stelle im Text."
+      },
+      {
+        "p": "Was macht sie sonntags?",
+        "a": [
+          "lee cómics"
+        ],
+        "opts": [
+          "lee cómics",
+          "toca la guitarra",
+          "practica deporte"
+        ],
+        "why": "Leo cómics heißt: Ich lese Comics. Los domingos heißt sonntags.",
+        "hint": "Achte auf die Person und die Endung oder suche die passende Stelle im Text."
+      }
+    ],
+    "text": "¡Hola! Me llamo Sara y tengo trece años. Vivo en Madrid con mi madre y mi hermano. Los martes escucho música a las cinco. Los domingos leo cómics. Mi hermano toca la guitarra.",
+    "audio": ""
+  },
+  {
+    "day": 1,
+    "title": "4 · Die besonderen Verben",
+    "note": "12–15 Minuten · Achte auf die Person. Akzente musst du hier nicht tippen.",
+    "qs": [
+      {
+        "p": "yo … (saber)",
+        "a": [
+          "sé"
+        ],
+        "opts": null,
+        "why": "Bei yo (ich) lautet die Präsensform von saber sé.",
+        "hint": "Sprich das Verb mit der angegebenen Person laut. Manche Formen weichen vom regelmäßigen Muster ab."
+      },
+      {
+        "p": "tú … (saber)",
+        "a": [
+          "sabes"
+        ],
+        "opts": null,
+        "why": "Bei tú (du) lautet die Präsensform von saber sabes.",
+        "hint": "Sprich das Verb mit der angegebenen Person laut. Manche Formen weichen vom regelmäßigen Muster ab."
+      },
+      {
+        "p": "nosotros … (saber)",
+        "a": [
+          "sabemos"
+        ],
+        "opts": null,
+        "why": "Bei nosotros (wir) lautet die Präsensform von saber sabemos.",
+        "hint": "Sprich das Verb mit der angegebenen Person laut. Manche Formen weichen vom regelmäßigen Muster ab."
+      },
+      {
+        "p": "vosotros … (saber)",
+        "a": [
+          "sabéis"
+        ],
+        "opts": null,
+        "why": "Bei vosotros (ihr) lautet die Präsensform von saber sabéis.",
+        "hint": "Sprich das Verb mit der angegebenen Person laut. Manche Formen weichen vom regelmäßigen Muster ab."
+      },
+      {
+        "p": "yo … (hacer)",
+        "a": [
+          "hago"
+        ],
+        "opts": null,
+        "why": "Bei yo (ich) lautet die Präsensform von hacer hago.",
+        "hint": "Sprich das Verb mit der angegebenen Person laut. Manche Formen weichen vom regelmäßigen Muster ab."
+      },
+      {
+        "p": "ella … (hacer)",
+        "a": [
+          "hace"
+        ],
+        "opts": null,
+        "why": "Bei ella (sie) lautet die Präsensform von hacer hace.",
+        "hint": "Sprich das Verb mit der angegebenen Person laut. Manche Formen weichen vom regelmäßigen Muster ab."
+      },
+      {
+        "p": "vosotros … (hacer)",
+        "a": [
+          "hacéis"
+        ],
+        "opts": null,
+        "why": "Bei vosotros (ihr) lautet die Präsensform von hacer hacéis.",
+        "hint": "Sprich das Verb mit der angegebenen Person laut. Manche Formen weichen vom regelmäßigen Muster ab."
+      },
+      {
+        "p": "ellos … (hacer)",
+        "a": [
+          "hacen"
+        ],
+        "opts": null,
+        "why": "Bei ellos (sie (Plural)) lautet die Präsensform von hacer hacen.",
+        "hint": "Sprich das Verb mit der angegebenen Person laut. Manche Formen weichen vom regelmäßigen Muster ab."
+      },
+      {
+        "p": "yo … (ver)",
+        "a": [
+          "veo"
+        ],
+        "opts": null,
+        "why": "Bei yo (ich) lautet die Präsensform von ver veo.",
+        "hint": "Sprich das Verb mit der angegebenen Person laut. Manche Formen weichen vom regelmäßigen Muster ab."
+      },
+      {
+        "p": "nosotros … (ver)",
+        "a": [
+          "vemos"
+        ],
+        "opts": null,
+        "why": "Bei nosotros (wir) lautet die Präsensform von ver vemos.",
+        "hint": "Sprich das Verb mit der angegebenen Person laut. Manche Formen weichen vom regelmäßigen Muster ab."
+      },
+      {
+        "p": "vosotros … (ver)",
+        "a": [
+          "veis"
+        ],
+        "opts": null,
+        "why": "Bei vosotros (ihr) lautet die Präsensform von ver veis.",
+        "hint": "Sprich das Verb mit der angegebenen Person laut. Manche Formen weichen vom regelmäßigen Muster ab."
+      },
+      {
+        "p": "yo … (tener)",
+        "a": [
+          "tengo"
+        ],
+        "opts": null,
+        "why": "Bei yo (ich) lautet die Präsensform von tener tengo.",
+        "hint": "Sprich das Verb mit der angegebenen Person laut. Manche Formen weichen vom regelmäßigen Muster ab."
+      },
+      {
+        "p": "tú … (tener)",
+        "a": [
+          "tienes"
+        ],
+        "opts": null,
+        "why": "Bei tú (du) lautet die Präsensform von tener tienes.",
+        "hint": "Sprich das Verb mit der angegebenen Person laut. Manche Formen weichen vom regelmäßigen Muster ab."
+      },
+      {
+        "p": "ella … (tener)",
+        "a": [
+          "tiene"
+        ],
+        "opts": null,
+        "why": "Bei ella (sie) lautet die Präsensform von tener tiene.",
+        "hint": "Sprich das Verb mit der angegebenen Person laut. Manche Formen weichen vom regelmäßigen Muster ab."
+      },
+      {
+        "p": "nosotros … (tener)",
+        "a": [
+          "tenemos"
+        ],
+        "opts": null,
+        "why": "Bei nosotros (wir) lautet die Präsensform von tener tenemos.",
+        "hint": "Sprich das Verb mit der angegebenen Person laut. Manche Formen weichen vom regelmäßigen Muster ab."
+      },
+      {
+        "p": "vosotros … (tener)",
+        "a": [
+          "tenéis"
+        ],
+        "opts": null,
+        "why": "Bei vosotros (ihr) lautet die Präsensform von tener tenéis.",
+        "hint": "Sprich das Verb mit der angegebenen Person laut. Manche Formen weichen vom regelmäßigen Muster ab."
+      },
+      {
+        "p": "ellos … (tener)",
+        "a": [
+          "tienen"
+        ],
+        "opts": null,
+        "why": "Bei ellos (sie (Plural)) lautet die Präsensform von tener tienen.",
+        "hint": "Sprich das Verb mit der angegebenen Person laut. Manche Formen weichen vom regelmäßigen Muster ab."
+      }
+    ],
+    "text": "",
+    "audio": ""
+  },
+  {
+    "day": 1,
+    "title": "5 · Ir, Ziele & Wochenplan",
+    "note": "12–15 Minuten · Ergänze die Lücken.",
+    "qs": [
+      {
+        "p": "yo … (ir)",
+        "a": [
+          "voy"
+        ],
+        "opts": null,
+        "why": "Voy ist die Form von ir für yo.",
+        "hint": "Achte auf Person, Artikel oder den Unterschied zwischen genauer Uhrzeit und Zeitspanne."
+      },
+      {
+        "p": "tú … (ir)",
+        "a": [
+          "vas"
+        ],
+        "opts": null,
+        "why": "Vas ist die Form von ir für tú.",
+        "hint": "Achte auf Person, Artikel oder den Unterschied zwischen genauer Uhrzeit und Zeitspanne."
+      },
+      {
+        "p": "ella … (ir)",
+        "a": [
+          "va"
+        ],
+        "opts": null,
+        "why": "Va ist die Form von ir für él und ella.",
+        "hint": "Achte auf Person, Artikel oder den Unterschied zwischen genauer Uhrzeit und Zeitspanne."
+      },
+      {
+        "p": "nosotros … (ir)",
+        "a": [
+          "vamos"
+        ],
+        "opts": null,
+        "why": "Vamos ist die Form von ir für nosotros und nosotras.",
+        "hint": "Achte auf Person, Artikel oder den Unterschied zwischen genauer Uhrzeit und Zeitspanne."
+      },
+      {
+        "p": "vosotros … (ir)",
+        "a": [
+          "vais"
+        ],
+        "opts": null,
+        "why": "Vais ist die Form von ir für vosotros und vosotras.",
+        "hint": "Achte auf Person, Artikel oder den Unterschied zwischen genauer Uhrzeit und Zeitspanne."
+      },
+      {
+        "p": "ellos … (ir)",
+        "a": [
+          "van"
+        ],
+        "opts": null,
+        "why": "Van ist die Form von ir für ellos und ellas.",
+        "hint": "Achte auf Person, Artikel oder den Unterschied zwischen genauer Uhrzeit und Zeitspanne."
+      },
+      {
+        "p": "Voy … parque.",
+        "a": [
+          "al"
+        ],
+        "opts": null,
+        "why": "Parque steht mit el. A + el wird zu al.",
+        "hint": "Achte auf Person, Artikel oder den Unterschied zwischen genauer Uhrzeit und Zeitspanne."
+      },
+      {
+        "p": "Vamos … piscina.",
+        "a": [
+          "a la"
+        ],
+        "opts": null,
+        "why": "Piscina steht mit la. Deshalb heißt es a la piscina.",
+        "hint": "Achte auf Person, Artikel oder den Unterschied zwischen genauer Uhrzeit und Zeitspanne."
+      },
+      {
+        "p": "Van … tiendas.",
+        "a": [
+          "a las"
+        ],
+        "opts": null,
+        "why": "Tiendas steht im Plural mit las. Die Form bleibt a las.",
+        "hint": "Achte auf Person, Artikel oder den Unterschied zwischen genauer Uhrzeit und Zeitspanne."
+      },
+      {
+        "p": "Vais … supermercados.",
+        "a": [
+          "a los"
+        ],
+        "opts": null,
+        "why": "Supermercados steht im Plural mit los. Die Form bleibt a los.",
+        "hint": "Achte auf Person, Artikel oder den Unterschied zwischen genauer Uhrzeit und Zeitspanne."
+      },
+      {
+        "p": "Los lunes … música. (yo, escuchar)",
+        "a": [
+          "escucho"
+        ],
+        "opts": null,
+        "why": "Escuchar ist regelmäßig. Für yo setzt du -o an escuch-.",
+        "hint": "Achte auf Person, Artikel oder den Unterschied zwischen genauer Uhrzeit und Zeitspanne."
+      },
+      {
+        "p": "Los miércoles … deporte. (nosotros, practicar)",
+        "a": [
+          "practicamos"
+        ],
+        "opts": null,
+        "why": "Practicar ist regelmäßig. Für nosotros setzt du -amos an practic-.",
+        "hint": "Achte auf Person, Artikel oder den Unterschied zwischen genauer Uhrzeit und Zeitspanne."
+      },
+      {
+        "p": "El viernes … al cine. (yo, ir)",
+        "a": [
+          "voy"
+        ],
+        "opts": null,
+        "why": "Bei yo heißt ir voy. Al cine bedeutet ins Kino.",
+        "hint": "Achte auf Person, Artikel oder den Unterschied zwischen genauer Uhrzeit und Zeitspanne."
+      },
+      {
+        "p": "Tengo clase … ocho a nueve.",
+        "a": [
+          "de"
+        ],
+        "opts": null,
+        "why": "Eine Zeitspanne beginnt mit de und endet mit a: de ocho a nueve.",
+        "hint": "Achte auf Person, Artikel oder den Unterschied zwischen genauer Uhrzeit und Zeitspanne."
+      },
+      {
+        "p": "Quedamos … las cuatro.",
+        "a": [
+          "a"
+        ],
+        "opts": null,
+        "why": "Bei einer genauen Uhrzeit steht a: a las cuatro.",
+        "hint": "Achte auf Person, Artikel oder den Unterschied zwischen genauer Uhrzeit und Zeitspanne."
+      },
+      {
+        "p": "La clase empieza … la una.",
+        "a": [
+          "a"
+        ],
+        "opts": null,
+        "why": "Bei ein Uhr benutzt du a la una.",
+        "hint": "Achte auf Person, Artikel oder den Unterschied zwischen genauer Uhrzeit und Zeitspanne."
+      }
+    ],
+    "text": "",
+    "audio": ""
+  },
+  {
+    "day": 1,
+    "title": "6 · Hörverstehen: Plan fürs Wochenende",
+    "note": "10–12 Minuten · Höre zweimal zu. Beantworte mit Zahlen oder Auswahl. Der Text bleibt zunächst verborgen.",
+    "qs": [
+      {
+        "p": "An welchem Tag geht Lucía ins Sportzentrum?",
+        "a": [
+          "sábado"
+        ],
+        "opts": [
+          "viernes",
+          "sábado",
+          "domingo"
+        ],
+        "why": "El sábado voy al polideportivo bedeutet: Am Samstag gehe ich ins Sportzentrum.",
+        "hint": "Hör noch einmal und achte gezielt auf die gesuchte Angabe."
+      },
+      {
+        "p": "Wann beginnt der Sport? (24-Stunden-Format)",
+        "a": [
+          "10:30"
+        ],
+        "opts": null,
+        "why": "De diez y media markiert den Beginn um 10:30 Uhr.",
+        "hint": "Hör noch einmal und achte gezielt auf die gesuchte Angabe."
+      },
+      {
+        "p": "Wann endet der Sport? (24-Stunden-Format)",
+        "a": [
+          "12:00"
+        ],
+        "opts": null,
+        "why": "A doce de la mañana markiert hier das Ende um 12:00 Uhr.",
+        "hint": "Hör noch einmal und achte gezielt auf die gesuchte Angabe."
+      },
+      {
+        "p": "Wie alt ist ihr Bruder? (Zahl)",
+        "a": [
+          "15"
+        ],
+        "opts": null,
+        "why": "Mi hermano tiene quince bedeutet: Mein Bruder ist 15. Lucía selbst ist 14.",
+        "hint": "Hör noch einmal und achte gezielt auf die gesuchte Angabe."
+      },
+      {
+        "p": "Wann treffen sie sich zum Kino? (24-Stunden-Format)",
+        "a": [
+          "16:45"
+        ],
+        "opts": null,
+        "why": "A las cinco menos cuarto de la tarde heißt um 16:45 Uhr.",
+        "hint": "Hör noch einmal und achte gezielt auf die gesuchte Angabe."
+      },
+      {
+        "p": "Was macht Lucía sonntags?",
+        "a": [
+          "hace los deberes"
+        ],
+        "opts": [
+          "hace los deberes",
+          "va al cine",
+          "monta a caballo"
+        ],
+        "why": "El domingo hago los deberes bedeutet: Am Sonntag mache ich Hausaufgaben.",
+        "hint": "Hör noch einmal und achte gezielt auf die gesuchte Angabe."
+      },
+      {
+        "p": "Welche Zahl hörst du als Busnummer?",
+        "a": [
+          "74"
+        ],
+        "opts": null,
+        "why": "Setenta y cuatro ergibt 70 + 4, also 74.",
+        "hint": "Hör noch einmal und achte gezielt auf die gesuchte Angabe."
+      },
+      {
+        "p": "Mit wem geht sie ins Kino?",
+        "a": [
+          "con sus amigos"
+        ],
+        "opts": [
+          "con su madre",
+          "con sus amigos",
+          "con sus abuelos"
+        ],
+        "why": "Con mis amigos heißt mit meinen Freunden.",
+        "hint": "Hör noch einmal und achte gezielt auf die gesuchte Angabe."
+      }
+    ],
+    "text": "",
+    "audio": "Hola, soy Lucía. Tengo catorce años y mi hermano tiene quince. El sábado voy al polideportivo. Practico deporte de diez y media a doce de la mañana. Por la tarde voy al cine con mis amigos. Quedamos a las cinco menos cuarto de la tarde. Vamos en el autobús número setenta y cuatro. El domingo hago los deberes y leo un libro."
+  },
+  {
+    "day": 2,
+    "title": "7 · Gemischte Generalprobe",
+    "note": "12–15 Minuten · Erst ohne Hilfe versuchen.",
+    "qs": [
+      {
+        "p": "„achtundfünfzig“ auf Spanisch",
+        "a": [
+          "cincuenta y ocho"
+        ],
+        "opts": null,
+        "why": "58 besteht aus 50 und 8: cincuenta + y + ocho.",
+        "hint": "Prüfe zuerst, ob nach einer Zahl, einer Uhrzeit oder der Verbform für eine bestimmte Person gefragt wird."
+      },
+      {
+        "p": "„sechsundzwanzig“ auf Spanisch",
+        "a": [
+          "veintiséis"
+        ],
+        "opts": null,
+        "why": "26 gehört zur Gruppe 21–29: veinti- und seis werden zusammengeschrieben.",
+        "hint": "Prüfe zuerst, ob nach einer Zahl, einer Uhrzeit oder der Verbform für eine bestimmte Person gefragt wird."
+      },
+      {
+        "p": "„siebzig“ auf Spanisch",
+        "a": [
+          "setenta"
+        ],
+        "opts": null,
+        "why": "Setenta ist 70. Sesenta ist 60.",
+        "hint": "Prüfe zuerst, ob nach einer Zahl, einer Uhrzeit oder der Verbform für eine bestimmte Person gefragt wird."
+      },
+      {
+        "p": "Son las seis menos cuarto. → Uhrzeit (nachmittags)",
+        "a": [
+          "17:45"
+        ],
+        "opts": null,
+        "why": "Seis menos cuarto ist eine Viertelstunde vor sechs, nachmittags also 17:45 Uhr.",
+        "hint": "Prüfe zuerst, ob nach einer Zahl, einer Uhrzeit oder der Verbform für eine bestimmte Person gefragt wird."
+      },
+      {
+        "p": "Es la una y media. → Uhrzeit (nachmittags)",
+        "a": [
+          "13:30"
+        ],
+        "opts": null,
+        "why": "La una y media ist halb zwei. Nachmittags sind das 13:30 Uhr.",
+        "hint": "Prüfe zuerst, ob nach einer Zahl, einer Uhrzeit oder der Verbform für eine bestimmte Person gefragt wird."
+      },
+      {
+        "p": "Nosotros … al instituto. (ir)",
+        "a": [
+          "vamos"
+        ],
+        "opts": null,
+        "why": "Für nosotros lautet die Form von ir vamos.",
+        "hint": "Prüfe zuerst, ob nach einer Zahl, einer Uhrzeit oder der Verbform für eine bestimmte Person gefragt wird."
+      },
+      {
+        "p": "Yo no … dónde está el libro. (saber)",
+        "a": [
+          "sé"
+        ],
+        "opts": null,
+        "why": "Saber hat in der ersten Person die Sonderform sé. No steht vor dem Verb.",
+        "hint": "Prüfe zuerst, ob nach einer Zahl, einer Uhrzeit oder der Verbform für eine bestimmte Person gefragt wird."
+      },
+      {
+        "p": "Vosotros … la televisión. (ver)",
+        "a": [
+          "veis"
+        ],
+        "opts": null,
+        "why": "Für vosotros lautet die Form von ver veis.",
+        "hint": "Prüfe zuerst, ob nach einer Zahl, einer Uhrzeit oder der Verbform für eine bestimmte Person gefragt wird."
+      },
+      {
+        "p": "Ella … los deberes. (hacer)",
+        "a": [
+          "hace"
+        ],
+        "opts": null,
+        "why": "Ella ist dritte Person Singular. Die passende Form von hacer ist hace.",
+        "hint": "Prüfe zuerst, ob nach einer Zahl, einer Uhrzeit oder der Verbform für eine bestimmte Person gefragt wird."
+      },
+      {
+        "p": "Mis amigos … quince años. (tener)",
+        "a": [
+          "tienen"
+        ],
+        "opts": null,
+        "why": "Mis amigos ist Mehrzahl und entspricht ellos. Die passende Form von tener ist tienen.",
+        "hint": "Prüfe zuerst, ob nach einer Zahl, einer Uhrzeit oder der Verbform für eine bestimmte Person gefragt wird."
+      },
+      {
+        "p": "Tú … un mensaje. (escribir)",
+        "a": [
+          "escribes"
+        ],
+        "opts": null,
+        "why": "Escribir ist regelmäßig. Für tú setzt du -es an escrib-.",
+        "hint": "Prüfe zuerst, ob nach einer Zahl, einer Uhrzeit oder der Verbform für eine bestimmte Person gefragt wird."
+      },
+      {
+        "p": "El sábado voy … cine.",
+        "a": [
+          "al"
+        ],
+        "opts": null,
+        "why": "Cine steht mit el. A + el wird zu al.",
+        "hint": "Prüfe zuerst, ob nach einer Zahl, einer Uhrzeit oder der Verbform für eine bestimmte Person gefragt wird."
+      }
+    ],
+    "text": "",
+    "audio": ""
+  },
+  {
+    "day": 2,
+    "title": "8 · Lesen & Mediation vorbereiten",
+    "note": "10–12 Minuten · Entnimm die Informationen; kurze Antworten reichen.",
+    "qs": [
+      {
+        "p": "Wann beginnt die Radtour? (24-Stunden-Format)",
+        "a": [
+          "09:30",
+          "9:30"
+        ],
+        "opts": null,
+        "why": "De nueve y media markiert den Beginn um 09:30 Uhr.",
+        "hint": "Suche zuerst das Schlüsselwort in der Frage. Lies dann die passende Stelle im Text."
+      },
+      {
+        "p": "Wann endet sie? (24-Stunden-Format)",
+        "a": [
+          "11:00"
+        ],
+        "opts": null,
+        "why": "A once de la mañana markiert das Ende um 11:00 Uhr.",
+        "hint": "Suche zuerst das Schlüsselwort in der Frage. Lies dann die passende Stelle im Text."
+      },
+      {
+        "p": "Wie viel kostet sie? Nur Zahl.",
+        "a": [
+          "12"
+        ],
+        "opts": null,
+        "why": "Cuesta doce euros bedeutet: Es kostet zwölf Euro.",
+        "hint": "Suche zuerst das Schlüsselwort in der Frage. Lies dann die passende Stelle im Text."
+      },
+      {
+        "p": "Wo treffen sie sich?",
+        "a": [
+          "en el parque"
+        ],
+        "opts": [
+          "en el instituto",
+          "en el parque",
+          "en el cine"
+        ],
+        "why": "Quedamos en el parque bedeutet: Wir treffen uns im Park.",
+        "hint": "Suche zuerst das Schlüsselwort in der Frage. Lies dann die passende Stelle im Text."
+      },
+      {
+        "p": "Wie alt ist Daniel? Nur Zahl.",
+        "a": [
+          "14"
+        ],
+        "opts": null,
+        "why": "Tengo catorce años bedeutet: Ich bin 14 Jahre alt.",
+        "hint": "Suche zuerst das Schlüsselwort in der Frage. Lies dann die passende Stelle im Text."
+      },
+      {
+        "p": "Für wen ist der Kinobesuch ungeeignet?",
+        "a": [
+          "Für jemanden, der um 18 Uhr zu Hause sein muss."
+        ],
+        "opts": [
+          "Für jemanden, der um 18 Uhr zu Hause sein muss.",
+          "Für jemanden, der 14 Jahre alt ist.",
+          "Für jemanden, der Rad fahren mag."
+        ],
+        "why": "Der Film läuft bis 19 Uhr. Wer um 18 Uhr zu Hause sein muss, kann nicht bis zum Ende bleiben.",
+        "hint": "Suche zuerst das Schlüsselwort in der Frage. Lies dann die passende Stelle im Text."
+      },
+      {
+        "p": "Wähle die passende spanische Vermittlung: „Die Radtour kostet zwölf Euro.“",
+        "a": [
+          "La ruta en bicicleta cuesta doce euros."
+        ],
+        "opts": [
+          "La ruta en bicicleta cuesta veinte euros.",
+          "La ruta en bicicleta cuesta doce euros.",
+          "La película cuesta doce euros."
+        ],
+        "why": "Cuesta heißt kostet. Doce heißt zwölf. Ruta en bicicleta heißt Radtour.",
+        "hint": "Suche zuerst das Schlüsselwort in der Frage. Lies dann die passende Stelle im Text."
+      },
+      {
+        "p": "Wähle: „Wir treffen uns um halb zehn im Park.“",
+        "a": [
+          "Quedamos a las nueve y media en el parque."
+        ],
+        "opts": [
+          "Quedamos a las diez y media en el parque.",
+          "Quedamos a las nueve y media en el parque.",
+          "Quedamos de nueve a diez en el parque."
+        ],
+        "why": "A las nueve y media ist um halb zehn. En el parque bedeutet im Park.",
+        "hint": "Suche zuerst das Schlüsselwort in der Frage. Lies dann die passende Stelle im Text."
+      }
+    ],
+    "text": "¡Hola! Soy Daniel y tengo catorce años. El domingo hay una ruta en bicicleta de nueve y media a once de la mañana. Cuesta doce euros. Quedamos en el parque. Por la tarde vamos al cine de cinco a siete. Mi amiga Ana tiene que estar en casa a las seis.\n\nWort-Hilfe: cuesta = kostet; una ruta en bicicleta = eine Radtour; tiene que = muss.",
+    "audio": ""
+  },
+  {
+    "day": 2,
+    "title": "9 · Jetzt selbst schreiben",
+    "note": "15–20 Minuten · Zwei kurze Texte. Keine automatische Benotung: Prüfe mit der Checkliste und nutze die Beispiele erst danach.",
+    "qs": [],
+    "text": "",
+    "audio": ""
+  }
+];
 const norm=s=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9 ]/g,'').trim().replace(/\s+/g,' ');
 function dist(a,b){let r=Array.from({length:b.length+1},(_,i)=>i);for(let i=1;i<=a.length;i++){let n=[i];for(let j=1;j<=b.length;j++)n[j]=Math.min(n[j-1]+1,r[j]+1,r[j-1]+(a[i-1]!==b[j-1]));r=n;}return r[b.length]}
 const verbForms=new Set('hablo hablas habla hablamos habláis hablan como comes come comemos coméis comen vivo vives vive vivimos vivís viven escribo escribes escribe escribimos escribís escriben subo subes sube subimos subís suben sé sabes sabe sabemos sabéis saben hago haces hace hacemos hacéis hacen veo ves ve vemos veis ven tengo tienes tiene tenemos tenéis tienen voy vas va vamos vais van'.split(' ').map(norm));
-function assess(value,q){let v=norm(value),answers=q.a.map(norm);if(!v)return 'empty';if(answers.includes(v))return 'good';if(q.opts||/^[0-9 ]+$/.test(v))return 'bad';if(answers.some(a=>verbForms.has(a))&&verbForms.has(v))return 'bad';if(answers.some(a=>a.length>=5&&dist(v,a)===1&&a.split(' ').length===v.split(' ').length))return 'near';return 'bad'}
-let saved={};try{saved=JSON.parse(localStorage.getItem('paul-es-20261106')||'{}')}catch(e){}function save(k,v){saved[k]=v;try{localStorage.setItem('paul-es-20261106',JSON.stringify(saved))}catch(e){}}
-function speak(t){if(!('speechSynthesis'in window)){alert('Sprachausgabe ist hier nicht verfügbar. Öffne den Trainer in Chrome oder Edge oder lass dir den Text vorlesen.');return}speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(t);u.lang='es-ES';u.rate=.82;speechSynthesis.speak(u)}
-function showDay(d){document.querySelectorAll('.day').forEach((e,i)=>e.hidden=i!==d);document.querySelectorAll('nav button').forEach((e,i)=>e.classList.toggle('active',i===d));try{speechSynthesis.cancel()}catch(e){}}
-dates.forEach((s,d)=>{let b=document.createElement('button');b.textContent=s;b.onclick=()=>showDay(d);document.querySelector('#nav').append(b);let section=document.createElement('section');section.className='day';document.querySelector('#main').append(section);blocks.forEach((b,bi)=>{if(b.day!==d)return;let a=document.createElement('article');a.innerHTML=`<h2>${b.title}</h2><p class="note">${b.note}</p>`;if(b.text){let t=document.createElement('p');t.className='reading';t.textContent=b.text;a.append(t)}if(b.audio){let btn=document.createElement('button');btn.textContent='▶ Spanischen Text anhören';btn.onclick=()=>speak(b.audio);a.append(btn);let det=document.createElement('details');det.innerHTML='<summary>Vorlesetext / Text erst nach dem Hören öffnen</summary>';let p=document.createElement('p');p.className='reading';p.textContent=b.audio;det.append(p);a.append(det);let help=document.createElement('p');help.innerHTML='<small>Sprachausgabe benötigt eine spanische Browserstimme. Falls sie nicht funktioniert: Eine andere Person liest den aufgeklappten Text zweimal vor, während du wegschaust. Die Hörtexte aus dem Buch sind auf den Fotos nicht enthalten.</small>';a.append(help)}b.qs.forEach((q,qi)=>{let key=bi+'-'+qi,w=document.createElement('div');w.className='question';let lab=document.createElement('label');lab.htmlFor='q'+key;lab.textContent=(qi+1)+'. '+q.p;let field=document.createElement(q.opts?'select':'input');field.id='q'+key;if(q.opts){let op=document.createElement('option');op.value='';op.textContent='Bitte auswählen …';field.append(op);q.opts.forEach(x=>{let o=document.createElement('option');o.value=x;o.textContent=x;field.append(o)})}else{field.autocomplete='off';field.spellcheck=false}field.value=saved[key]||'';field.oninput=()=>save(key,field.value);let f=document.createElement('span');f.id='f'+key;f.className='feedback';w.append(lab,field,f);a.append(w)});if(b.qs.length){let actions=document.createElement('div');actions.className='actions';let check=document.createElement('button');check.textContent='Antworten prüfen';check.onclick=()=>{let ok=0,done=0;b.qs.forEach((q,qi)=>{let key=bi+'-'+qi,v=document.getElementById('q'+key).value,f=document.getElementById('f'+key),state=assess(v,q);f.className='feedback '+state;f.textContent=state==='empty'?'Noch offen.':state==='good'?'✓ Richtig!':state==='near'?'✓ Fast richtig – kleiner Tippfehler. Richtig geschrieben: '+q.a[0]:'Noch einmal überlegen. Tipp: Schau auf die Person, die Uhrzeit oder die Textstelle.';if(state!=='empty')done++;if(state==='good'||state==='near')ok++});result.textContent=ok+' von '+b.qs.length+' geschafft · '+(b.qs.length-done)+' noch offen.'};let sol=document.createElement('button');sol.className='secondary';sol.textContent='Lösungen anzeigen';sol.onclick=()=>{b.qs.forEach((q,qi)=>{document.getElementById('f'+bi+'-'+qi).textContent='Lösung: '+q.a.join(' / ')})};let result=document.createElement('p');result.setAttribute('aria-live','polite');actions.append(check,sol);a.append(actions,result)}else{a.insertAdjacentHTML('beforeend',"<h3>A · Nachricht an einen spanischen Freund</h3><p>Schreibe 6–8 kurze spanische Sätze. Du darfst Angaben erfinden. Nenne deinen Namen und dein Alter, zwei Hobbys, zwei Wochentage mit Aktivitäten, eine genaue Uhrzeit und eine Zeitspanne. Verwende mindestens einmal <b>ir</b> mit einem Ziel und einmal <b>hacer, ver oder saber</b>.</p><textarea aria-label=\"Deine Nachricht\" placeholder=\"¡Hola! Me llamo …\"></textarea><details><summary>Starthilfe, wenn du festhängst</summary><p>Me llamo … / Tengo … años. / Los lunes … / A las … / De … a … / Voy al … / Voy a la … / Hago … / Veo …</p></details><h3>B · Kleine Mediation</h3><p>Dein spanischer Freund versteht diesen deutschen Plan nicht. Schreibe ihm 3–4 kurze spanische Sätze: <b>Am Samstag geht ihr ins Kino. Ihr trefft euch um 15:45 Uhr am Kino. Der Film dauert von 16 bis 18 Uhr. Am Sonntag machst du Hausaufgaben.</b> Du musst nicht Wort für Wort übersetzen.</p><textarea aria-label=\"Deine Mediation\" placeholder=\"El sábado …\"></textarea><h3>Deine Checkliste</h3><ul><li>Passt die Verbform zur Person?</li><li>Habe ich mein Alter mit tener ausgedrückt?</li><li>Steht bei „um“ a la una bzw. a las …?</li><li>Steht bei Zeitspannen de … a …?</li><li>Steht vor el als Ziel al und vor la a la?</li><li>Steht no direkt vor dem Verb, wenn ich etwas verneine?</li><li>Sind alle geforderten Informationen enthalten?</li></ul><p><b>Bewertung:</b> Inhalt und verständliche Sätze zuerst. Kleine Tippfehler und Sonderzeichen werden nicht abgestraft. Falsche Personenformen werden erklärt und verbessert. Es gibt viele richtige Texte; deshalb hier keine automatische „falsch“-Meldung. Du kannst deine Texte zur Rückmeldung in den Chat kopieren.</p><details><summary>Beispiel A · erst nach deinem Versuch öffnen</summary><p>¡Hola! Me llamo Pablo y tengo trece años. En mi tiempo libre escucho música y leo cómics. Los lunes hago los deberes a las cuatro. Los martes practico deporte de cinco a seis. Los sábados voy al cine con mis amigos. Quedamos a las tres y media. Los domingos veo la televisión. ¿Y tú?</p></details><details><summary>Beispiel B · erst nach deinem Versuch öffnen</summary><p>El sábado vamos al cine. Quedamos a las cuatro menos cuarto en el cine. La película es de cuatro a seis de la tarde. El domingo hago los deberes.</p></details>");a.querySelectorAll('textarea').forEach((t,i)=>{t.value=saved['text'+i]||'';t.oninput=()=>save('text'+i,t.value)})}section.append(a)});if(d===2){let bonus=document.createElement('details');bonus.innerHTML='<summary>Freiwilliger Zusatz aus 5B · nur wenn noch Energie da ist</summary><p>tener que + Infinitiv: Tengo que estudiar. = Ich muss lernen.</p><p>querer: quiero, quieres, quiere, queremos, queréis, quieren.<br>poder: puedo, puedes, puede, podemos, podéis, pueden.<br>jugar: juego, juegas, juega, jugamos, jugáis, juegan.</p><p>Sag laut: Ich möchte ins Kino gehen. / Wir können Rad fahren. / Er spielt Fußball.</p><details><summary>Beispiele</summary>Quiero ir al cine. / Podemos montar en bicicleta. / Él juega al fútbol.</details>';section.append(bonus)}});showDay(0);
-</script></html>
+function oneSwap(a,b){
+  if(a.length!==b.length)return false;
+  const i=Array.from(a).findIndex((letter,index)=>letter!==b[index]);
+  return i>=0 && a[i+1]===b[i] && a[i]===b[i+1] && a.slice(i+2)===b.slice(i+2);
+}
+function assess(value,q){let v=norm(value),answers=q.a.map(norm);if(!v)return 'empty';if(answers.includes(v))return 'good';if(q.opts||answers.some(a=>/^\d+$/.test(a))||/^[0-9 ]+$/.test(v))return 'bad';if(answers.some(a=>verbForms.has(a))&&verbForms.has(v))return 'bad';if(answers.some(a=>a.length>=5&&(dist(v,a)===1||oneSwap(v,a))&&a.split(' ').length===v.split(' ').length))return 'near';return 'bad'}
+
+
+const byId = id => document.getElementById(id);
+const days = ['Freitag · 06.11.', 'Samstag · 07.11.', 'Sonntag · 08.11.'];
+const totalQuestions = blocks.reduce((total, block) => total + block.qs.length, 0);
+const storageKey = 'paul-spanisch-arena-v1';
+const legacyKey = 'paul-es-20261106';
+
+function readStorage(key, fallback) {
+  try { return JSON.parse(localStorage.getItem(key)) || fallback; }
+  catch { return fallback; }
+}
+
+const drafts = readStorage(legacyKey, {});
+const stats = readStorage(storageKey, {xp:0, bestCombo:0, solved:{}, mistakes:{}, last:null});
+const today = new Intl.DateTimeFormat('de-DE',{weekday:'long',timeZone:'Europe/Berlin'}).format(new Date());
+let day = Math.max(0, days.findIndex(label => label.startsWith(today)));
+let round = null;
+let view = 'home';
+
+function persist(key, value) {
+  try { localStorage.setItem(key, JSON.stringify(value)); }
+  catch { /* Training also works when browser storage is disabled. */ }
+}
+
+function el(tag, label, className) {
+  const node = document.createElement(tag);
+  if (label) node.textContent = label;
+  if (className) node.className = className;
+  return node;
+}
+
+function button(label, handler, className) {
+  const node = el('button', label, className);
+  node.type = 'button';
+  node.onclick = handler;
+  return node;
+}
+
+function show(id, scroll = true) {
+  view = id;
+  for (const name of ['home','game','result','learn','writing']) byId(name).hidden = name !== id;
+  byId('learnBtn').disabled = id === 'game';
+  if (scroll) byId(id).scrollIntoView({block:'start',behavior:'smooth'});
+}
+
+function getItems(blockIndex) {
+  return blocks[blockIndex].qs.map((question, index) => ({
+    question, blockIndex, key: blockIndex + '-' + index
+  }));
+}
+
+function dayMistakes() {
+  return blocks.flatMap((block, index) => block.day === day ? getItems(index) : [])
+    .filter(item => stats.mistakes[item.key]);
+}
+
+function updateStats() {
+  const count = Object.keys(stats.solved).length;
+  byId('level').textContent = 'Level ' + (1 + Math.floor(stats.xp / 100));
+  byId('xp').textContent = stats.xp + ' XP gesammelt';
+  byId('mastered').textContent = count + ' / ' + totalQuestions;
+  byId('masterBar').style.width = count / totalQuestions * 100 + '%';
+  byId('bestCombo').textContent = stats.bestCombo;
+  byId('lastRound').textContent = stats.last
+    ? 'Letzte Runde: ' + stats.last.points + ' Punkte · ' + stats.last.correct + ' / ' + stats.last.count + ' richtig'
+    : 'Deine erste Runde wartet.';
+}
+
+function home(scroll = true) {
+  byId('days').replaceChildren(...days.map((label, index) => {
+    const tab = button(label, () => { day = index; home(false); });
+    tab.setAttribute('aria-pressed', String(day === index));
+    return tab;
+  }));
+  const tiles = blocks.flatMap((block, index) => {
+    if (block.day !== day) return [];
+    const tile = button('', () => block.qs.length ? start(index) : show('writing'), 'topic');
+    const content = el('span');
+    content.append(el('strong',block.title.replace(/^\d+ · /,'')),el('small',block.note));
+    if (block.qs.length) {
+      const solved = getItems(index).filter(item => stats.solved[item.key]).length;
+      content.append(el('span',solved + ' / ' + block.qs.length + ' gelöst','tag'));
+    }
+    tile.append(el('span',String(index+1),'num'),content);
+    return [tile];
+  });
+  byId('topics').replaceChildren(...tiles);
+  const mistakes = dayMistakes().length;
+  byId('retry').textContent = 'Fehler dieses Tages üben (' + mistakes + ')';
+  byId('retry').disabled = mistakes === 0;
+  updateStats();
+  show('home',scroll);
+}
+
+function speak(text, message) {
+  if (!('speechSynthesis' in window)) {
+    message.textContent = 'Sprachausgabe fehlt hier. Klappe den Vorlesetext auf und lass ihn dir vorlesen.';
+    return;
+  }
+  speechSynthesis.cancel();
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = 'es-ES';
+  utterance.rate = .82;
+  utterance.onerror = event => {
+    if (!['canceled','interrupted'].includes(event.error))
+      message.textContent = 'Sprachausgabe klappt hier gerade nicht. Bitte lass dir den Text vorlesen.';
+  };
+  speechSynthesis.speak(utterance);
+}
+
+function renderMaterial(index) {
+  const host = byId('material');
+  const block = blocks[index];
+  host.replaceChildren();
+  if (block.text) {
+    const passage = el('p',block.text,'reading');
+    host.append(passage);
+  }
+  if (block.audio) {
+    const details = el('details');
+    details.append(el('summary','Vorlesetext · erst nach dem Hören öffnen'),el('p',block.audio,'reading'));
+    const message = el('p','','muted');
+    message.setAttribute('role','status');
+    host.append(button('▶ Spanischen Text anhören',() => speak(block.audio,message)),message,details);
+  }
+}
+
+function start(blockIndex) {
+  const queue = blockIndex === null ? dayMistakes() : getItems(blockIndex);
+  if (!queue.length) return;
+  round = {blockIndex, queue, index:0, points:0, correct:0, combo:0, answers:[], materialIndex:null};
+  render();
+  show('game');
+}
+
+function scoreLine() {
+  byId('roundPoints').textContent = round.points + ' Punkte';
+  byId('combo').textContent = round.combo + ' in Folge';
+}
+
+function render() {
+  const item = round.queue[round.index];
+  const {question, blockIndex, key} = item;
+  round.answered = false;
+  round.hinted = false;
+  byId('blockTitle').textContent = round.blockIndex === null ? 'Fehlertraining · ' + days[day] : blocks[blockIndex].title;
+  byId('counter').textContent = (round.index + 1) + ' / ' + round.queue.length;
+  byId('progress').style.width = round.index / round.queue.length * 100 + '%';
+  scoreLine();
+  if (round.materialIndex !== blockIndex) {
+    renderMaterial(blockIndex);
+    round.materialIndex = blockIndex;
+  }
+  byId('feedback').hidden = true;
+  byId('hintText').hidden = true;
+  byId('hint').disabled = false;
+  byId('next').hidden = true;
+  const task = byId('task');
+  const prompt = el('div',question.p,'question');
+  prompt.id = 'questionPrompt';
+  task.replaceChildren(prompt);
+  if (question.opts) {
+    const choices = el('div','','answers');
+    choices.append(...question.opts.map(option => button(option,() => answer(option))));
+    task.append(choices);
+    return;
+  }
+  const form = el('form');
+  const input = el('input','','textanswer');
+  input.setAttribute('aria-labelledby','questionPrompt');
+  input.autocomplete = 'off';
+  input.autocapitalize = 'off';
+  input.spellcheck = false;
+  input.required = true;
+  if (round.blockIndex !== null && !stats.solved[key] && !stats.mistakes[key]) input.value = drafts[key] || '';
+  input.oninput = () => { drafts[key] = input.value; persist(legacyKey,drafts); };
+  const submit = el('button','Antwort prüfen','primary');
+  form.append(input,submit);
+  form.onsubmit = event => { event.preventDefault(); answer(input.value); };
+  task.append(form);
+}
+
+function answer(value) {
+  if (!round || round.answered) return;
+  const {question,key} = round.queue[round.index];
+  const state = assess(value,question);
+  if (state === 'empty') return;
+  round.answered = true;
+  const correct = state !== 'bad';
+  round.combo = correct && !round.hinted ? round.combo + 1 : 0;
+  const points = correct ? (round.hinted ? 5 : 10 + 2 * Math.min(3,Math.floor(round.combo / 3))) : 0;
+  round.points += points;
+  round.correct += Number(correct);
+  round.answers.push({question,value,state,points});
+  stats.xp += points;
+  stats.bestCombo = Math.max(stats.bestCombo,round.combo);
+  if (correct) {
+    stats.solved[key] = true;
+    delete stats.mistakes[key];
+  } else {
+    stats.mistakes[key] = true;
+  }
+  persist(storageKey,stats);
+  updateStats();
+  scoreLine();
+  byId('progress').style.width = (round.index + 1) / round.queue.length * 100 + '%';
+  byId('task').querySelectorAll('button,input').forEach(control => control.disabled = true);
+  byId('hint').disabled = true;
+  const feedback = byId('feedback');
+  feedback.className = 'feedback ' + state;
+  const title = correct ? (state === 'near' ? 'Kleiner Tippfehler · +' : 'Treffer! +') + points + ' Punkte' : 'Diese Aufgabe kannst du noch einmal üben.';
+  feedback.replaceChildren(el('strong',title),el('p','Lösung: ' + question.a[0]),el('p',question.why));
+  feedback.hidden = false;
+  const next = byId('next');
+  next.hidden = false;
+  next.textContent = round.index + 1 === round.queue.length ? 'Auswertung ansehen →' : 'Weiter →';
+  next.focus();
+}
+
+function finish() {
+  if (!round) return;
+  if ('speechSynthesis' in window) speechSynthesis.cancel();
+  const completed = round;
+  round = null;
+  const count = completed.answers.length;
+  if (count) {
+    stats.last = {points:completed.points,correct:completed.correct,count};
+    persist(storageKey,stats);
+    updateStats();
+  }
+  const result = byId('result');
+  const actions = el('div','','actions');
+  actions.append(button('Zur Blockauswahl',() => home(),'primary'));
+  if (completed.blockIndex !== null) actions.append(button('Block noch einmal',() => start(completed.blockIndex)));
+  if (dayMistakes().length) actions.append(button('Fehler üben',() => start(null)));
+  result.replaceChildren(el('h2',count === completed.queue.length ? 'Runde geschafft' : 'Runde beendet'),
+    el('div',completed.points + ' Punkte','resultnum'),
+    el('p',completed.correct + ' von ' + count + ' beantworteten Aufgaben richtig'),actions);
+  if (count) {
+    const review = el('details');
+    review.open = completed.answers.some(entry => entry.state === 'bad');
+    const list = el('div','','resultlist');
+    for (const entry of completed.answers) {
+      const row = el('article');
+      row.append(el('strong',entry.state === 'bad' ? '↻ Wiederholen' : '✓ +' + entry.points + ' Punkte'),
+        el('p',entry.question.p),el('p','Deine Antwort: ' + entry.value),
+        el('p','Lösung: ' + entry.question.a[0]),el('p',entry.question.why,'muted'));
+      list.append(row);
+    }
+    review.append(el('summary','Deine Antworten und Erklärungen'),list);
+    result.append(review);
+  }
+  show('result');
+}
+
+byId('next').onclick = () => {
+  if (!round || !round.answered) return;
+  round.index++;
+  if (round.index === round.queue.length) finish();
+  else { render(); byId('game').scrollIntoView({block:'start',behavior:'smooth'}); }
+};
+byId('quit').onclick = finish;
+byId('retry').onclick = () => start(null);
+byId('hint').onclick = () => {
+  if (!round || round.answered) return;
+  round.hinted = true;
+  byId('hintText').textContent = round.queue[round.index].question.hint;
+  byId('hintText').hidden = false;
+  byId('hint').disabled = true;
+};
+byId('closeWriting').onclick = () => home();
+let beforeLearn = 'home';
+byId('learnBtn').onclick = () => {
+  if (view === 'learn') show(beforeLearn);
+  else { beforeLearn = view; show('learn'); }
+};
+byId('closeLearn').onclick = () => show(beforeLearn);
+const rules = [
+  ['Wochentage', 'lunes, martes, miércoles, jueves, viernes, sábado, domingo. El lunes heißt am Montag, los lunes heißt montags.'],
+  ['Zahlen bis 100', '21–29 schreibt man zusammen, etwa veintidós. Ab 31 verbindet y Zehner und Einer, etwa treinta y siete. Genau 100 heißt cien.'],
+  ['Uhrzeiten', 'Es la una, sonst son las … . Y cuarto ist Viertel nach, y media ist halb zur nächsten Stunde und menos cuarto ist Viertel vor. A las … nennt einen Zeitpunkt, de … a … eine Zeitspanne.'],
+  ['Regelmäßige Verben', '-ar: o, as, a, amos, áis, an. -er: o, es, e, emos, éis, en. -ir: o, es, e, imos, ís, en.'],
+  ['Ir und Ziele', 'voy, vas, va, vamos, vais, van. A + el wird zu al: voy al cine. Bei la bleibt es a la: voy a la piscina.'],
+  ['Unregelmäßige Verben', 'Merke dir besonders die yo-Formen: sé (saber), hago (hacer), veo (ver), tengo (tener). Für das Alter benutzt du tener: Tengo trece años.'],
+  ['Lesen und Hören', 'Lies zuerst die Frage. Achte dann gezielt auf die gesuchte Angabe: Zahl, Zeitpunkt, Person oder Ort.']
+];
+for (const [title, rule] of rules) {
+  const card = el('article');
+  card.append(el('h3',title),el('p',rule));
+  byId('learnContent').append(card);
+}
+byId('writing').querySelectorAll('textarea').forEach((input,index) => {
+  input.classList.add('textanswer');
+  const key = 'text' + index;
+  input.value = drafts[key] || '';
+  input.oninput = () => { drafts[key] = input.value; persist(legacyKey,drafts); };
+});
+home(false);
+</script></body></html>
