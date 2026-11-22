@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kräfte trainieren · Natur & Technik</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#edf3f7;color:#142936;font:1rem/1.5 system-ui,sans-serif}header{background:#142936;color:#fff;padding:2.6rem 1rem 3.5rem}header>div,main{width:min(720px,100%);margin:auto}header p{margin:0;color:#8ce1cd;font-weight:650}h1{margin:.15em 0 0;font-size:clamp(2rem,7vw,3.5rem);letter-spacing:-.05em}main{padding:0 1rem 2rem;margin-top:-1.6rem}.card{background:#fff;border-radius:1.2rem;padding:clamp(1rem,4vw,2rem);box-shadow:0 8px 32px #14293612}h2{line-height:1.25;margin:.5rem 0 1.1rem}button{font:inherit;text-align:left;cursor:pointer;border:1px solid #bacbd3;background:#fff;color:inherit;border-radius:.7rem;padding:.8rem 1rem;min-height:48px;font-weight:650}button:hover:not(:disabled){background:#e3f6ef;border-color:#30836e}button:focus-visible{outline:3px solid #267f70;outline-offset:3px}button:disabled{cursor:default}.grid{display:grid;gap:.65rem}.primary{background:#16614f;border-color:#16614f;color:#fff}.primary:hover:not(:disabled){background:#104c3e}small{font-size:.9rem;color:#4a6270}progress{width:100%;accent-color:#16614f;height:.65rem}.correct{background:#d9f6e6;border-color:#398963}.wrong{background:#ffede4;border-color:#ad5834}.feedback{padding:.8rem 1rem;border-left:4px solid #337e6c;background:#eff6f4;margin:1rem 0}.actions{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1rem}.label{margin-bottom:.4rem;color:#426371;font-weight:700}button span{display:block;font-size:.9rem;font-weight:450;color:#4a6270}
+</style>
+</head>
+<body>
+<header><div><p>Natur &amp; Technik · Klasse 8</p><h1>Kräfte trainieren</h1></div></header>
+<main><section class="card" id="card" aria-label="Übungsaufgaben"></section></main>
+<script>
+const topics = [
+ ["Kräfte & Kraftpfeile", [
+  ["Welches Formelzeichen und welche Einheit gehören zur Kraft?", "F und Newton (N)", "W und Joule (J)", "m und Kilogramm (kg)", "Das Formelzeichen ist F. Kräfte werden in Newton (N) angegeben."],
+  ["Womit misst du eine Kraft von ungefähr 3 N?", "Mit einem Federkraftmesser", "Mit einem Lineal", "Mit einer Stoppuhr", "Prüfe am Federkraftmesser den Nullpunkt und lies den Wert auf Augenhöhe ab."],
+  ["Welche Gewichtskraft hat eine Masse von 1 kg ungefähr auf der Erde?", "10 N", "1 N", "100 N", "Als Faustregel auf der Erde gilt: 100 g haben ungefähr 1 N Gewichtskraft."],
+  ["Welche Liste enthält alle vier Wirkungen einer Kraft?", "Beschleunigen, abbremsen, Richtung ändern, verformen", "Beschleunigen, abbremsen, wiegen, messen", "Erwärmen, leuchten, rollen, wiegen", "Kräfte können die Geschwindigkeit, die Bewegungsrichtung oder die Form verändern."],
+  ["Was zeigt die Länge eines Kraftpfeils bei festem Maßstab?", "Den Betrag der Kraft", "Den Angriffspunkt", "Die Richtung der Kraft", "Der Pfeil beginnt am Angriffspunkt. Die Spitze zeigt die Richtung. Die Länge gibt den Betrag an."],
+  ["Eine Kraft von 5,5 N wirkt nach links unten. Maßstab: 1 cm = 1 N. Welcher Pfeil passt?", "5,5 cm ↙", "5,5 cm ↗", "11 cm ↙", "Bei 1 cm je Newton ist der Pfeil 5,5 cm lang und zeigt nach links unten."],
+  ["Eine Kraft von 240 N wirkt nach links unten. Maßstab: 1 cm = 60 N. Welcher Pfeil passt?", "4 cm ↙", "4 cm ↖", "6 cm ↙", "240 N geteilt durch 60 N pro Zentimeter ergibt 4 cm."],
+  ["Ein Schwamm wird zusammengedrückt. Woran erkennst du die Kraftwirkung?", "Der Schwamm verändert seine Form.", "Der Schwamm bekommt mehr Masse.", "Der Schwamm verliert seine Gewichtskraft.", "Das Zusammendrücken verformt den Schwamm."]
+ ]],
+ ["Federn & Hooke", [
+  ["Was bedeutet l₀ beim Federversuch?", "Ausgangslänge der unbelasteten Feder", "Verlängerung der Feder", "Federkonstante", "l₀ ist die Länge vor dem Belasten."],
+  ["Die Feder ist anfangs 10 cm und unter Belastung 14 cm lang. Wie groß ist Δl?", "4 cm", "14 cm", "24 cm", "Die Verlängerung ist die belastete Länge minus Ausgangslänge: 14 cm − 10 cm."],
+  ["Welche Formel beschreibt das Hooke’sche Gesetz?", "F = D · Δl", "F = D + Δl", "F = Δl ÷ D", "Die Kraft ist das Produkt aus Federkonstante D und Verlängerung Δl."],
+  ["Eine unbelastete Feder ist 10 cm lang. Eine Kraft verlängert sie um 4 cm. Wie lang ist sie bei doppelter Kraft im Hooke’schen Bereich?", "18 cm", "8 cm", "28 cm", "Die Verlängerung verdoppelt sich auf 8 cm. Die Ausgangslänge bleibt 10 cm."],
+  ["D = 2 N/cm und Δl = 3 cm. Wie groß ist die Kraft?", "6 N", "5 N", "1,5 N", "F = D · Δl = 2 N/cm · 3 cm = 6 N."],
+  ["Zwei Federn werden um gleich viel verlängert. Welche braucht mehr Kraft?", "Die Feder mit der größeren Federkonstante", "Die Feder mit der kleineren Federkonstante", "Beide brauchen immer gleich viel Kraft", "Bei gleicher Verlängerung bedeutet ein größeres D auch eine größere Kraft."]
+ ]],
+ ["Newton & Gegenkraft", [
+  ["Welche Aussage beschreibt ein Kraft-Gegenkraft-Paar?", "Gleich groß, entgegengesetzt, an zwei Körpern", "Gleich groß, gleich gerichtet, an zwei Körpern", "Gleich groß, entgegengesetzt, am selben Körper", "Ein Wechselwirkungspaar wirkt gleichzeitig an zwei verschiedenen Körpern."],
+  ["Deine Hand drückt nach rechts gegen eine Wand. Wo wirkt die Gegenkraft?", "Die Wand drückt nach links auf deine Hand.", "Deine Hand drückt nach links auf die Wand.", "Die Wand drückt nach rechts auf deine Hand.", "Hand und Wand üben gleichzeitig Kräfte aufeinander aus."],
+  ["Der Fuß tritt den Ball. Welche Kraft ist die Gegenkraft zur Kraft des Fußes auf den Ball?", "Die Kraft des Balls auf den Fuß", "Die Gewichtskraft des Balls", "Der Luftwiderstand auf den Ball", "Für das zweite Mitglied des Wechselwirkungspaars tauschen Ball und Fuß ihre Rollen."],
+  ["Zwei direkt verbundene Federkraftmesser werden im ruhigen Versuch auseinandergezogen. Einer zeigt 4 N. Was zeigt der andere?", "4 N", "0 N", "8 N", "Beide messen den gleichen Betrag."],
+  ["Ein Körper bewegt sich bereits. Was geschieht ohne resultierende Kraft?", "Er bewegt sich geradlinig mit derselben Geschwindigkeit weiter.", "Er wird immer langsamer.", "Er ändert von selbst die Richtung.", "Das beschreibt Newtons erstes Gesetz, das Trägheitsgesetz."],
+  ["Dieselbe resultierende Kraft wirkt auf zwei Wagen. Welcher beschleunigt stärker?", "Der Wagen mit der kleineren Masse", "Der Wagen mit der größeren Masse", "Beide beschleunigen gleich stark", "Nach Newtons zweitem Gesetz gilt a = F ÷ m."],
+  ["Welches Gesetz von Isaac Newton beschreibt Kraft und Gegenkraft?", "Das dritte Gesetz", "Das erste Gesetz", "Das zweite Gesetz", "Das dritte Newton’sche Gesetz heißt Wechselwirkungsprinzip."],
+  ["Wie bringt sich eine Rakete nach oben?", "Sie stößt Gas nach unten aus. Das Gas übt eine Kraft nach oben auf die Rakete aus.", "Die Erde zieht sie durch die Schwerkraft nach oben.", "Das Gas und die Rakete werden beide nach oben gedrückt.", "Rakete und Gas üben entgegengesetzte Kräfte aufeinander aus."]
+ ]],
+ ["Reibung & Arbeit", [
+  ["Warum rutscht ein Schuh beim Abstoßen auf trockenem Boden nicht weg?", "Haftreibung", "Gleitreibung", "Rollreibung", "Haftreibung wirkt dem drohenden Rutschen am Kontakt zwischen Schuh und Boden entgegen."],
+  ["Welche Reibungsart passt zum Schlitten, der über Schnee rutscht?", "Gleitreibung", "Rollreibung", "Haftreibung", "Beim Rutschen gleiten die Kufen über den Schnee."],
+  ["Welche Reibungsart passt zu einem Rad, das über den Boden rollt?", "Rollreibung", "Gleitreibung", "Luftwiderstand", "Beim Rollen wirkt Rollreibung beziehungsweise Rollwiderstand."],
+  ["Beim gleichmäßigen Ziehen bekommt ein Holzklotz Zusatzgewicht. Was zeigte der Versuch?", "Die nötige Zugkraft wurde größer.", "Die nötige Zugkraft wurde kleiner.", "Die nötige Zugkraft blieb immer gleich.", "Der Klotz wird stärker auf die Unterlage gedrückt. Im Versuch nahm die Gleitreibung zu."],
+  ["Ein flaches Blatt und dasselbe Papier als Knäuel fallen aus gleicher Höhe. Was fällt meist langsamer?", "Das flache Blatt", "Das Papierknäuel", "Beide fallen immer gleich schnell.", "Das flache Blatt bietet der Luft beim Fallen mehr Fläche."],
+  ["Du ziehst eine Kiste mit 8 N über 50 cm in Zugrichtung. Wie groß ist die Arbeit?", "4 J", "400 J", "16 J", "50 cm = 0,50 m. W = F · s = 8 N · 0,50 m = 4 J."],
+  ["Du hältst eine Tasche ruhig in der Hand. Wie groß ist die mechanische Arbeit an der Tasche?", "0 J", "So groß wie ihre Gewichtskraft in N", "Je länger du hältst, desto größer", "Die Tasche bewegt sich nicht. Der Weg ist null, also ist die mechanische Arbeit an ihr null."],
+  ["Welche Einheit ist gleich 1 Joule?", "1 N · m", "1 N ÷ m", "1 kg", "Bei W = F · s ergibt Newton mal Meter die Einheit Joule."]
+ ]]
+];
+const card = document.querySelector("#card");
+const all = topics.flatMap(([topic, items]) => items.map(item => ({topic, item})));
+let round, position, mistakes, selected;
+function element(tag, content, className) {
+ const node = document.createElement(tag);
+ node.textContent = content;
+ if (className) node.className = className;
+ return node;
+}
+function button(parent, label, action, className) {
+ const node = element("button", label, className);
+ node.type = "button";
+ node.addEventListener("click", action);
+ parent.append(node);
+ return node;
+}
+function shuffle(items) {
+ const copy = [...items];
+ for (let i = copy.length - 1; i > 0; i--) {
+  const j = Math.floor(Math.random() * (i + 1));
+  [copy[i], copy[j]] = [copy[j], copy[i]];
+ }
+ return copy;
+}
+function heading(text, focus = true) {
+ const title = element("h2", text);
+ title.tabIndex = -1;
+ card.append(title);
+ if (focus) title.focus();
+}
+function home(focus = true) {
+ card.replaceChildren();
+ heading("Was möchtest du üben?", focus);
+ const menu = element("div", "", "grid");
+ card.append(menu);
+ button(menu, "Alle Themen · " + all.length + " Fragen", () => start(all), "primary");
+ for (const [index, [title, items]] of topics.entries()) {
+  const choice = button(menu, title + " · " + items.length + " Fragen", () => start(all.filter(q => q.topic === title)));
+  if (index === topics.length - 1) choice.append(element("span", "Zusatzthemen aus den Unterrichtsunterlagen"));
+ }
+}
+function start(items) {
+ selected = [...items];
+ round = shuffle(items);
+ position = 0;
+ mistakes = [];
+ render();
+}
+function render() {
+ card.replaceChildren();
+ const {topic, item} = round[position];
+ const [question, correct, distractor1, distractor2, explanation] = item;
+ card.append(element("div", topic, "label"), element("small", `Frage ${position + 1} von ${round.length}`));
+ const progress = document.createElement("progress");
+ progress.max = round.length;
+ progress.value = position;
+ progress.setAttribute("aria-label", "Beantwortete Fragen");
+ card.append(progress);
+ heading(question);
+ const choices = element("div", "", "grid");
+ card.append(choices);
+ const buttons = shuffle([correct, distractor1, distractor2]).map(answer =>
+  button(choices, answer, () => {
+   const right = answer === correct;
+   if (!right) mistakes.push(round[position]);
+   for (const option of buttons) {
+    option.disabled = true;
+    if (option.textContent === correct) option.classList.add("correct");
+    else if (option.textContent === answer) option.classList.add("wrong");
+   }
+   progress.value = position + 1;
+   feedback.textContent = (right ? "Richtig! " : "Richtige Antwort: " + correct + ". ") + explanation;
+   feedback.hidden = false;
+   next.hidden = false;
+   next.focus();
+  })
+ );
+ const feedback = element("p", "", "feedback");
+ feedback.setAttribute("role", "status");
+ feedback.hidden = true;
+ card.append(feedback);
+ const actions = element("div", "", "actions");
+ card.append(actions);
+ const next = button(actions, position + 1 === round.length ? "Ergebnis anzeigen" : "Nächste Frage", () => {
+  position++;
+  if (position === round.length) summary();
+  else render();
+ }, "primary");
+ next.hidden = true;
+ button(actions, "Themenwahl", () => home());
+}
+function summary() {
+ card.replaceChildren();
+ heading("Dein Ergebnis");
+ card.append(element("p", `${round.length - mistakes.length} von ${round.length} Fragen richtig.`));
+ const actions = element("div", "", "actions");
+ card.append(actions);
+ if (mistakes.length) button(actions, "Fehler wiederholen · " + mistakes.length, () => start(mistakes), "primary");
+ button(actions, "Runde neu starten", () => start(selected));
+ button(actions, "Themenwahl", () => home());
+}
+home(false);
+</script>
+</body>
+</html>
